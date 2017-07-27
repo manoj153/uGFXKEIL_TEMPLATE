@@ -4,112 +4,216 @@
 /* http://ugfx.org                                                            */
 /******************************************************************************/
 
+#include "colors.h"
+#include "widgetstyles.h"
 #include "gui.h"
-#include "gfx.h"
-#include "ugfx_ex.h"
 
-#define COLOR_SIZE	20
-#define PEN_SIZE	20
-#define OFFSET		3
+// GListeners
+GListener glistener;
 
-#define COLOR_BOX(a)		(ev.x >= a && ev.x <= a + COLOR_SIZE)
-#define PEN_BOX(a)			(ev.y >= a && ev.y <= a + COLOR_SIZE)
-#define GET_COLOR(a)		(COLOR_BOX(a * COLOR_SIZE + OFFSET))
-#define GET_PEN(a)			(PEN_BOX(a * 2 * PEN_SIZE + OFFSET))
-#define DRAW_COLOR(a)		(a * COLOR_SIZE + OFFSET)
-#define DRAW_PEN(a)			(a * 2 * PEN_SIZE + OFFSET)
-#define DRAW_AREA(x, y)		(x >= PEN_SIZE + OFFSET + 3 && x <= gdispGetWidth() && \
-							 y >= COLOR_SIZE + OFFSET + 3 && y <= gdispGetHeight())
+// GHandles
+GHandle ghContainerPage0;
+GHandle default_pg;
+GHandle touch_button_df_pg;
+GHandle ghContainerPage1;
+GHandle ghKeyboard1;
+GHandle ghTextedit1;
+GHandle ghLabel1;
+GHandle ghLabel2;
 
-void drawScreen(void);
-void drawScreen(void) {
-	char *msg = "uGFX";
-	font_t		font1, font2;
+// Fonts
+font_t dejavu_sans_16;
+font_t dejavu_sans_12;
+font_t dejavu_sans_24;
 
-	font1 = gdispOpenFont("DejaVuSans24*");
-	font2 = gdispOpenFont("DejaVuSans12*");
+// Images
 
-	gdispClear(White);
-	gdispDrawString(gdispGetWidth()-gdispGetStringWidth(msg, font1)-3, 3, msg, font1, Black);
-	
-	/* colors */
-	gdispFillArea(0 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Black);	/* Black */
-	gdispFillArea(1 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Red);		/* Red */
-	gdispFillArea(2 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Yellow);	/* Yellow */
-	gdispFillArea(3 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Green);	/* Green */
-	gdispFillArea(4 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Blue);		/* Blue */
-	gdispDrawBox (5 * COLOR_SIZE + 3, 3, COLOR_SIZE, COLOR_SIZE, Black);	/* White */
+static void createPagePage0(void)
+{
+	GWidgetInit wi;
+	gwinWidgetClearInit(&wi);
 
-	/* pens */	
-	gdispFillStringBox(OFFSET * 2, DRAW_PEN(1), PEN_SIZE, PEN_SIZE, "1", font2, White, Black, justifyCenter);
-	gdispFillStringBox(OFFSET * 2, DRAW_PEN(2), PEN_SIZE, PEN_SIZE, "2", font2, White, Black, justifyCenter);
-	gdispFillStringBox(OFFSET * 2, DRAW_PEN(3), PEN_SIZE, PEN_SIZE, "3", font2, White, Black, justifyCenter);
-	gdispFillStringBox(OFFSET * 2, DRAW_PEN(4), PEN_SIZE, PEN_SIZE, "4", font2, White, Black, justifyCenter);
-	gdispFillStringBox(OFFSET * 2, DRAW_PEN(5), PEN_SIZE, PEN_SIZE, "5", font2, White, Black, justifyCenter);
-	
-	gdispCloseFont(font1);
-	gdispCloseFont(font2);
+
+	// create container widget: ghContainerPage0
+	wi.g.show = FALSE;
+	wi.g.x = 0;
+	wi.g.y = 0;
+	wi.g.width = 480;
+	wi.g.height = 272;
+	wi.g.parent = 0;
+	wi.text = "Container";
+	wi.customDraw = 0;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghContainerPage0 = gwinContainerCreate(0, &wi, 0);
+
+	// create button widget: default_pg
+	wi.g.show = TRUE;
+	wi.g.x = 0;
+	wi.g.y = 0;
+	wi.g.width = 480;
+	wi.g.height = 272;
+	wi.g.parent = ghContainerPage0;
+	default_pg = gwinImageCreate(0, &wi.g);
+	gwinImageOpenFile(default_pg, "rsc/ACCESS_CONTROL.BMP");
+
+	// create button widget: touch_button_df_pg
+	wi.g.show = TRUE;
+	wi.g.x = 200;
+	wi.g.y = 20;
+	wi.g.width = 120;
+	wi.g.height = 20;
+	wi.g.parent = ghContainerPage0;
+	wi.text = "TOUCH";
+	wi.customDraw = gwinButtonDraw_Rounded;
+	wi.customParam = 0;
+	wi.customStyle = &white;
+	touch_button_df_pg = gwinButtonCreate(0, &wi);
+	gwinSetFont(touch_button_df_pg, dejavu_sans_12);
+	gwinRedraw(touch_button_df_pg);
 }
 
+static void createPagePage1(void)
+{
+	GWidgetInit wi;
+	gwinWidgetClearInit(&wi);
+
+
+	// create container widget: ghContainerPage1
+	wi.g.show = FALSE;
+	wi.g.x = 0;
+	wi.g.y = 0;
+	wi.g.width = 480;
+	wi.g.height = 272;
+	wi.g.parent = 0;
+	wi.text = "Container";
+	wi.customDraw = 0;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghContainerPage1 = gwinContainerCreate(0, &wi, 0);
+
+	// Create keyboard widget: ghKeyboard1
+	wi.g.show = TRUE;
+	wi.g.x = 0;
+	wi.g.y = 124;
+	wi.g.width = 483;
+	wi.g.height = 148;
+	wi.g.parent = ghContainerPage1;
+	wi.text = "Keyboard1";
+	wi.customDraw = gwinKeyboardDraw_Normal;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghKeyboard1 = gwinKeyboardCreate(0, &wi);
+
+	// Create textedit widget: ghTextedit1
+	wi.g.show = TRUE;
+	wi.g.x = 0;
+	wi.g.y = 39;
+	wi.g.width = 178;
+	wi.g.height = 61;
+	wi.g.parent = ghContainerPage1;
+	wi.text = "Enter your Pin ";
+	wi.customDraw = gwinTexteditDefaultDraw;
+	wi.customParam = 0;
+	wi.customStyle = &white;
+	ghTextedit1 = gwinTexteditCreate(0, &wi, 0);
+	gwinSetFont(ghTextedit1, dejavu_sans_24);
+	gwinRedraw(ghTextedit1);
+
+	// Create label widget: ghLabel1
+	wi.g.show = TRUE;
+	wi.g.x = 400;
+	wi.g.y = 0;
+	wi.g.width = 78;
+	wi.g.height = 18;
+	wi.g.parent = ghContainerPage1;
+	wi.text = "hr:mm:ss";
+	wi.customDraw = gwinLabelDrawJustifiedLeft;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghLabel1 = gwinLabelCreate(0, &wi);
+	gwinLabelSetBorder(ghLabel1, FALSE);
+
+	// Create label widget: ghLabel2
+	wi.g.show = TRUE;
+	wi.g.x = 340;
+	wi.g.y = 0;
+	wi.g.width = 38;
+	wi.g.height = 20;
+	wi.g.parent = ghContainerPage1;
+	wi.text = "date";
+	wi.customDraw = gwinLabelDrawJustifiedLeft;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghLabel2 = gwinLabelCreate(0, &wi);
+	gwinLabelSetBorder(ghLabel2, FALSE);
+}
+
+void guiShowPage(unsigned pageIndex)
+{
+	// Hide all pages
+	gwinHide(ghContainerPage0);
+	gwinHide(ghContainerPage1);
+
+	// Show page selected page
+	switch (pageIndex) {
+	case 0:
+		gwinShow(ghContainerPage0);
+		break;
+
+	case 1:
+		gwinShow(ghContainerPage1);
+		break;
+
+	default:
+		break;
+	}
+}
+
+void guiCreate(void)
+{
+	GWidgetInit wi;
+
+	// Prepare fonts
+	dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
+	dejavu_sans_12 = gdispOpenFont("DejaVuSans12");
+	dejavu_sans_24 = gdispOpenFont("DejaVuSans24");
+
+	// Prepare images
+
+	// GWIN settings
+	gwinWidgetClearInit(&wi);
+	gwinSetDefaultFont(dejavu_sans_16);
+	gwinSetDefaultStyle(&white, FALSE);
+	gwinSetDefaultColor(black_studio);
+	gwinSetDefaultBgColor(white_studio);
+
+	// Create all the display pages
+	createPagePage0();
+	createPagePage1();
+
+	// Select the default display page
+	guiShowPage(0);
+
+}
+
+void guiEventLoop(void)
+{
+	GEvent* pe;
+
+	while (1) {
+		// Get an event
+		pe = geventEventWait(&glistener, 0);
+		switch (pe->type) {
+		}
+
+	}
+}
 
 void rundisplay()
 {
-		
-		int RoughAdjValue = 10;
-		GEventMouse		ev;
-  
 	gfxInit();
-	color_t color = Black;
-	uint16_t pen = 0;
-
-	gfxInit();
-	ginputGetMouse(0);
-
-	drawScreen();
-		while (1)
-		{
-		
-  /* USER CODE END WHILE */
-
-  /* USER CODE BEGIN 3 */
-		ginputGetMouseStatus(0, &ev);
-		if (!(ev.buttons & GINPUT_MOUSE_BTN_LEFT))
-			continue;
-
-		/* inside color box ? */
-		if(ev.y >= OFFSET && ev.y <= COLOR_SIZE) {
-			     if(GET_COLOR(0)) 	color = Black;
-			else if(GET_COLOR(1))	color = Red;
-			else if(GET_COLOR(2))	color = Yellow;
-			else if(GET_COLOR(3))	color = Green;
-			else if(GET_COLOR(4))	color = Blue;
-			else if(GET_COLOR(5))	color = White;
-		
-		/* inside pen box ? */
-		} else if(ev.x >= OFFSET && ev.x <= PEN_SIZE) {
-			     if(GET_PEN(1))		pen = 0;
-			else if(GET_PEN(2))		pen = 1;
-			else if(GET_PEN(3))		pen = 2;
-			else if(GET_PEN(4))		pen = 3;
-			else if(GET_PEN(5))		pen = 4;		
-
-		/* inside drawing area ? */
-		} else if(DRAW_AREA(ev.x, ev.y)) {
-			if(pen == 0)
-				gdispDrawPixel(ev.x, ev.y, color);
-			else
-				gdispFillCircle(ev.x, ev.y, pen, color);
-		}
-		//gdispSetOrientation(1);
-		//gdispDrawLine(5,5,5,100,Black);
-		
-		// Get an Event
-		
-		
-  }
+	guiCreate();
+	
 }
-
-
-
-
 

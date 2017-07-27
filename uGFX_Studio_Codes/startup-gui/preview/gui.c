@@ -94,7 +94,7 @@ static void createPagePage1(void)
 
 	// Create keyboard widget: ghKeyboard1
 	wi.g.show = TRUE;
-	wi.g.x = 0;
+	wi.g.x = -3;
 	wi.g.y = 124;
 	wi.g.width = 483;
 	wi.g.height = 148;
@@ -193,7 +193,7 @@ void guiCreate(void)
 	createPagePage1();
 
 	// Select the default display page
-	guiShowPage(0);
+	guiShowPage(1);
 
 }
 

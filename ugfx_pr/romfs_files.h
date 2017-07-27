@@ -4,4 +4,4 @@
  * The files have been converted using...
  * 		file2c -dbcs infile outfile
  */
-#include "rsc/intay.h"
+//#include "rsc/intay.h"

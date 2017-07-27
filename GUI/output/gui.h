@@ -9,32 +9,18 @@
 
 #include "gfx.h"
 
-// Widget groups
-#define GROUP_DEFAULT 0
-
 // GListeners
-extern GListener gl;
+extern GListener glistener;
 
 // GHandles
-extern GHandle ghContainerControl;
-extern GHandle ghButtonInc;
-extern GHandle ghButtonDec;
-extern GHandle ghButtonInc10;
-extern GHandle ghButtonDec10;
-extern GHandle ghProgressbar1;
-extern GHandle ghLabelProgress;
-extern GHandle ghList1;
-extern GHandle ghButtonClearMsg;
-extern GHandle ghButtonScreenSettings;
-extern GHandle ghContainerSettings;
-extern GHandle ghContainer3;
-extern GHandle ghRadiobutton50;
-extern GHandle ghRadiobutton25;
-extern GHandle ghRadiobutton5;
-extern GHandle ghRadiobutton10;
-extern GHandle ghButtonScreenControl;
+extern GHandle ghContainerPage0;
+extern GHandle default_pg;
+extern GHandle touch_button_df_pg;
+extern GHandle ghContainerPage1;
+extern GHandle ghKeyboard1;
+extern GHandle ghTextedit1;
 extern GHandle ghLabel1;
-extern GHandle ghImagebox1;
+extern GHandle ghLabel2;
 
 // Function Prototypes
 void guiCreate(void);

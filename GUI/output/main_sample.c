@@ -13,11 +13,12 @@ int main(int argc, char* argv[])
 	(void)argv;
 
 	gfxInit();
+
 	gdispSetBacklight(100);
 	gdispSetContrast(100);
 
-	geventListenerInit(&gl);
-	gwinAttachListener(&gl);
+	geventListenerInit(&glistener);
+	gwinAttachListener(&glistener);
 
 	guiCreate();
 

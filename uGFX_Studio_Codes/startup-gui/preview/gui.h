@@ -9,6 +9,9 @@
 
 #include "gfx.h"
 
+// Widget groups
+#define GROUP_DEFAULT 0
+
 // GListeners
 extern GListener glistener;
 

@@ -17,10 +17,10 @@
 #if GFX_USE_GFILE && GFILE_NEED_NATIVEFS
 
 #include "gfile_fs.h"
-
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+
 
 static bool_t NativeDel(const char *fname);
 static bool_t NativeExists(const char *fname);
