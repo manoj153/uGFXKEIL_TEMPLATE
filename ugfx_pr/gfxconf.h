@@ -48,8 +48,8 @@
 		//#define CORTEX_USE_FPU TRUE
     #define GFX_CPU                                  GFX_CPU_CORTEX_M7_FP
 //    #define GFX_CPU_NO_ALIGNMENT_FAULTS              FALSE
-//    #define GFX_CPU_ENDIAN                           GFX_CPU_ENDIAN_UNKNOWN
-  #define GFX_OS_HEAP_SIZE                         4000
+  #define GFX_CPU_ENDIAN                           GFX_CPU_ENDIAN_LITTLE	
+  #define GFX_OS_HEAP_SIZE                         		6500
 //    #define GFX_OS_NO_INIT                           TRUE
     #define GFX_OS_INIT_NO_WARNING                   TRUE
 //    #define GFX_OS_PRE_INIT_FUNCTION                 myHardwareInitRoutine
@@ -112,9 +112,9 @@
 //        #define GDISP_NEED_IMAGE_BMP_4_RLE           TRUE
 //        #define GDISP_NEED_IMAGE_BMP_8               TRUE
 //        #define GDISP_NEED_IMAGE_BMP_8_RLE           TRUE
-//        #define GDISP_NEED_IMAGE_BMP_16              TRUE
+        #define GDISP_NEED_IMAGE_BMP_16              TRUE
 //        #define GDISP_NEED_IMAGE_BMP_24              TRUE
-        #define GDISP_NEED_IMAGE_BMP_32              TRUE
+//        #define GDISP_NEED_IMAGE_BMP_32              TRUE
 //    #define GDISP_NEED_IMAGE_JPG                     FALSE
 //    #define GDISP_NEED_IMAGE_PNG                     FALSE
 //    #define GDISP_NEED_IMAGE_ACCOUNTING              FALSE
@@ -161,12 +161,12 @@
 #define GFX_USE_GWIN                                 TRUE
 
 #define GWIN_NEED_WINDOWMANAGER                      TRUE
-#define GWIN_REDRAW_IMMEDIATE                         TRUE
+//#define GWIN_REDRAW_IMMEDIATE                         TRUE
 #define GWIN_REDRAW_SINGLEOP                     TRUE
 //    #define GWIN_NEED_FLASHING                       FALSE
 //        #define GWIN_FLASHING_PERIOD                 250
 
-//#define GWIN_NEED_CONSOLE                            FALSE
+#define GWIN_NEED_CONSOLE                            TRUE
 //    #define GWIN_CONSOLE_USE_HISTORY                 FALSE
 //        #define GWIN_CONSOLE_HISTORY_AVERAGING       FALSE
 //        #define GWIN_CONSOLE_HISTORY_ATCREATE        FALSE
@@ -182,29 +182,29 @@
 //        #define GWIN_LABEL_ATTRIBUTE                 FALSE
     #define GWIN_NEED_BUTTON                         TRUE
  #define GWIN_BUTTON_LAZY_RELEASE             FALSE
-    #define GWIN_NEED_SLIDER                         TRUE
+   // #define GWIN_NEED_SLIDER                         TRUE
 //        #define GWIN_SLIDER_NOSNAP                   FALSE
 //        #define GWIN_SLIDER_DEAD_BAND                5
 //        #define GWIN_SLIDER_TOGGLE_INC               20
     #define GWIN_NEED_CHECKBOX                       TRUE
     #define GWIN_NEED_IMAGE                          TRUE
-   #define GWIN_NEED_IMAGE_ANIMATION            TRUE
+   #define GWIN_NEED_IMAGE_ANIMATION            			TRUE
     #define GWIN_NEED_RADIO                          TRUE
-    #define GWIN_NEED_LIST                           TRUE
+    #define GWIN_NEED_LIST                           FALSE
 //        #define GWIN_NEED_LIST_IMAGES                FALSE
-    #define GWIN_NEED_PROGRESSBAR                    TRUE
+    #define GWIN_NEED_PROGRESSBAR                    FALSE
 //        #define GWIN_PROGRESSBAR_AUTO                FALSE
     #define GWIN_NEED_KEYBOARD                       TRUE
-        #define GWIN_KEYBOARD_DEFAULT_LAYOUT         VirtualKeyboard_English1
+    #define GWIN_KEYBOARD_DEFAULT_LAYOUT         VirtualKeyboard_English1
         #define GWIN_NEED_KEYBOARD_ENGLISH1          TRUE
     #define GWIN_NEED_TEXTEDIT                       TRUE
 //    #define GWIN_FLAT_STYLING                        FALSE
 //    #define GWIN_WIDGET_TAGS                         FALSE
 
 #define GWIN_NEED_CONTAINERS                         TRUE
-    #define GWIN_NEED_CONTAINER                      TRUE
- #define GWIN_NEED_FRAME                          FALSE
-    #define GWIN_NEED_TABSET                         FALSE
+#define GWIN_NEED_CONTAINER                      TRUE
+#define GWIN_NEED_FRAME                          FALSE
+#define GWIN_NEED_TABSET                         FALSE
 //        #define GWIN_TABSET_TABHEIGHT                18
 
 
@@ -214,8 +214,8 @@
 #define GFX_USE_GEVENT                               TRUE
 
 #define GEVENT_ASSERT_NO_RESOURCE                    FALSE
-#define GEVENT_MAXIMUM_SIZE                          32
-#define GEVENT_MAX_SOURCE_LISTENERS                  32
+#define GEVENT_MAXIMUM_SIZE                          32 //dEFAULT VALUE: 32
+#define GEVENT_MAX_SOURCE_LISTENERS                  3 //dEFAULT VALUE: 32
 
 
 ///////////////////////////////////////////////////////////////////////////
@@ -250,10 +250,10 @@
 //    #define GINPUT_MOUSE_POLL_PERIOD                 25
 //    #define GINPUT_MOUSE_CLICK_TIME                  300
 //    #define GINPUT_TOUCH_CXTCLICK_TIME               700
-   #define GINPUT_TOUCH_USER_CALIBRATION_LOAD       FALSE
+  // #define GINPUT_TOUCH_USER_CALIBRATION_LOAD       FALSE
 //    #define GINPUT_TOUCH_USER_CALIBRATION_SAVE       FALSE
 //    #define GMOUSE_DRIVER_LIST                       GMOUSEVMT_Win32, GMOUSEVMT_Win32
-#define GINPUT_NEED_KEYBOARD                         FALSE
+//#define GINPUT_NEED_KEYBOARD                         TRUE
 //    #define GINPUT_KEYBOARD_POLL_PERIOD              200
 //    #define GKEYBOARD_DRIVER_LIST                    GKEYBOARDVMT_Win32, GKEYBOARDVMT_Win32
 //    #define GKEYBOARD_LAYOUT_OFF                     FALSE

@@ -8,15 +8,18 @@
 #include "widgetstyles.h"
 #include "gui.h"
 #include "ACCESS_CONTROL.h"
-
+char dynamic_array[5];
 // GListeners //create a glistener
 GListener glistener;
-
+GWidgetInit wi;
 // GHandles // Smtg related to positioning, bg_colour etc. 
+// Container holder of a age specefic page.
 GHandle ghContainerPage0;
-GHandle default_pg;
-GHandle touch_button_df_pg; // middle top button on main page
 GHandle ghContainerPage1;
+GHandle default_pg; // image 
+GHandle touch_button_df_pg; // middle top button on main page
+GHandle ghButton1;
+
 GHandle ghKeyboard1;
 GHandle ghTextedit1;
 GHandle ghLabel1;
@@ -27,14 +30,17 @@ font_t dejavu_sans_16;
 font_t dejavu_sans_12;
 font_t dejavu_sans_24;
 
+
+//font_t dejavu_sans_16 = gdispOpenFont("DejaVuSans16");//default fonts
+
 // Images
 
 static void createPagePage0(void)
 {
-	GWidgetInit wi;
+	
+	
+	//GWidgetInit wi;
 	gwinWidgetClearInit(&wi);
-
-
 	// create container widget: ghContainerPage0
 	wi.g.show = TRUE;
 	wi.g.x = 0;
@@ -60,29 +66,29 @@ static void createPagePage0(void)
 	gwinImageOpenMemory(default_pg, access_control);
 
 	// create button widget: touch_button_df_pg
-	wi.g.show = TRUE;
+	wi.g.show = TRUE;  
 	wi.g.x = 200;
 	wi.g.y = 20;
 	wi.g.width = 120;
 	wi.g.height = 20;
 	wi.g.parent = ghContainerPage0;
-	wi.text = "TOUCH";
+	wi.text = "DEMO";
 	wi.customDraw = gwinButtonDraw_Rounded;
 	wi.customParam = 0;
 	wi.customStyle = &white;
 	touch_button_df_pg = gwinButtonCreate(0, &wi);
-	gwinSetFont(touch_button_df_pg, dejavu_sans_12);
+	gwinSetFont(touch_button_df_pg, dejavu_sans_16);
 	gwinRedraw(touch_button_df_pg);
 }
 
 static void createPagePage1(void)
 {
-	GWidgetInit wi;
+	//GWidgetInit wi;
 	gwinWidgetClearInit(&wi);
 
 
 	// create container widget: ghContainerPage1
-	wi.g.show = TRUE;
+	wi.g.show = FALSE; // Default is TRUE :? I changed to false sinc it's just a container
 	wi.g.x = 0;
 	wi.g.y = 0;
 	wi.g.width = 480;
@@ -92,7 +98,7 @@ static void createPagePage1(void)
 	wi.customDraw = 0;
 	wi.customParam = 0;
 	wi.customStyle = 0;
-	ghContainerPage1 = gwinContainerCreate(0, &wi, 0);
+	ghContainerPage1 = gwinContainerCreate(0, &wi, 0); // Create a blank container
 
 	// Create keyboard widget: ghKeyboard1
 	wi.g.show = TRUE;
@@ -105,31 +111,31 @@ static void createPagePage1(void)
 	wi.customDraw = gwinKeyboardDraw_Normal;
 	wi.customParam = 0;
 	wi.customStyle = 0;
-	ghKeyboard1 = gwinKeyboardCreate(0, &wi);
+	ghKeyboard1 = gwinKeyboardCreate(0, &wi); // having keyboard capability 
 
 	// Create textedit widget: ghTextedit1
 	wi.g.show = TRUE;
 	wi.g.x = 0;
 	wi.g.y = 39;
-	wi.g.width = 178;
+	wi.g.width = 280;
 	wi.g.height = 61;
 	wi.g.parent = ghContainerPage1;
-	wi.text = "Enter your Pin ";
+	wi.text = "Pin:";
 	wi.customDraw = gwinTexteditDefaultDraw;
 	wi.customParam = 0;
 	wi.customStyle = &white;
-	ghTextedit1 = gwinTexteditCreate(0, &wi, 0);
-	gwinSetFont(ghTextedit1, dejavu_sans_24);
+	ghTextedit1 = gwinTexteditCreate(0, &wi, 5);
+	gwinSetFont(ghTextedit1,dejavu_sans_16 );
 	gwinRedraw(ghTextedit1);
 
 	// Create label widget: ghLabel1
 	wi.g.show = TRUE;
-	wi.g.x = 400;
+	wi.g.x = 405;
 	wi.g.y = 0;
 	wi.g.width = 78;
 	wi.g.height = 18;
 	wi.g.parent = ghContainerPage1;
-	wi.text = "hr:mm:ss";
+	wi.text = "08:55:39";
 	wi.customDraw = gwinLabelDrawJustifiedLeft;
 	wi.customParam = 0;
 	wi.customStyle = 0;
@@ -143,12 +149,27 @@ static void createPagePage1(void)
 	wi.g.width = 38;
 	wi.g.height = 20;
 	wi.g.parent = ghContainerPage1;
-	wi.text = "date";
+	wi.text = "Saturday";
 	wi.customDraw = gwinLabelDrawJustifiedLeft;
 	wi.customParam = 0;
 	wi.customStyle = 0;
 	ghLabel2 = gwinLabelCreate(0, &wi);
 	gwinLabelSetBorder(ghLabel2, FALSE);
+	
+	
+	wi.g.show = TRUE;
+	wi.g.x = 380;
+	wi.g.y = 30;
+	wi.g.width = 97;
+	wi.g.height = 53;
+	wi.g.parent = ghContainerPage1;
+	wi.text = "PG1";
+	wi.customDraw = gwinButtonDraw_Rounded;
+	wi.customParam = 0;
+	wi.customStyle = &black;
+	ghButton1 = gwinButtonCreate(0, &wi);
+	gwinSetFont(ghButton1, dejavu_sans_16);
+	gwinRedraw(ghButton1);
 }
 
 void guiShowPage(unsigned pageIndex)
@@ -177,7 +198,7 @@ void guiCreate(void)
 	GWidgetInit wi;
 
 	// Prepare fonts
-	dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
+	//dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
 	//dejavu_sans_12 = gdispOpenFont("DejaVuSans12");
 	//dejavu_sans_24 = gdispOpenFont("DejaVuSans24");
 
@@ -202,42 +223,90 @@ void guiCreate(void)
 
 void guiEventLoop(void)
 {
+	
 	GEvent* pe;
-
+	GEventKeyboard *	pk;
+	unsigned			i;
 	while (1) {
 		// Get an event
-		pe = geventEventWait(&glistener, 100000000);
+		pe = geventEventWait(&glistener,TIME_INFINITE );
 		switch (pe->type) {
+			{
 			case GEVENT_GWIN_BUTTON:
 				if (((GEventGWinButton*)pe)->gwin == touch_button_df_pg) {
 
-						gwinHide(ghContainerPage0);
+						gwinDestroy(ghContainerPage0);
 						guiCreate();
+					//gwinPrintf(ghTextedit1, "fgdfg");
 //					createPagePage1();
 //					guiShowPage(1);
-				}
-				break;
-			default:
-				gwinHide(ghContainerPage0);
 				
-				guiShowPage(1);
+					//(((GEventGWinButton*)pe)->gwin == ghButton1)	
+							
+					break;
+				}
+				
+				else if (((GEventGWinButton*)pe)->gwin == ghButton1)  // main page
+					
+				{
+						gwinHide(ghContainerPage1);
+						gwinDestroy(ghContainerPage1);
+						
+					createPagePage0();
+					guiShowPage(0);
+					break;
+				}
+				
+			}
+			break;
+			case GEVENT_GWIN_KEYBOARD || GEVENT_KEYBOARD:
+			{		
+			if (((GEventKeyboard*)pe)->bytecount >0)
+					{
+						pk = (GEventKeyboard *)pe;
+						for (int x =0; x < 4; x++)
+							{
+								dynamic_array[x] = (uint8_t)pk->c[x];
+								dynamic_array[1]++;
+								//gwinPrintf(ghTextedit1, "ERROR");
+							}
+							
+							if (dynamic_array[0] == (char) '1' || dynamic_array[1] == (char) '1')
+							{
+//								gwinDestroy(ghContainerPage0);
+//								gwinHide(ghContainerPage1);
+//								gwinHide(ghContainerPage0);
+							}
+						
+							
+			
+					}	
+					break;
+				}
 			
 				
+					
+					
+			default:
+							
 				break;
 		}
 
-	}
+	
 }
+	}
 
 void rundisplay()
 {
 	gfxInit();
+		dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
 		createPagePage0();
 		guiShowPage(0);
 	//guiCreate();
 	gwinAttachMouse(0);
 	geventListenerInit(&glistener);
 	gwinAttachListener(&glistener);
+	geventAttachSource(&glistener, gwinKeyboardGetEventSource(ghKeyboard1), GLISTEN_KEYTRANSITIONS|GLISTEN_KEYUP|GKEYBOARD_ALL_INSTANCES);
 	guiEventLoop();
 }
 

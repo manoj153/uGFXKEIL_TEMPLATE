@@ -184,7 +184,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
-
+	BSP_SDRAM_Init();
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC3_Init();
