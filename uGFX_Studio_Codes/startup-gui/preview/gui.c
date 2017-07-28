@@ -20,6 +20,7 @@ GHandle ghKeyboard1;
 GHandle ghTextedit1;
 GHandle ghLabel1;
 GHandle ghLabel2;
+GHandle ghContainerCloud_user_startup;
 
 // Fonts
 font_t dejavu_sans_16;
@@ -27,6 +28,28 @@ font_t dejavu_sans_12;
 font_t dejavu_sans_24;
 
 // Images
+gdispImage Cloud_USER;
+
+static void containerDraw_Unnamed(GWidgetObject* gw, void* param)
+{
+	(void)param;
+
+	// Clear container area
+	gdispGFillArea(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, gw->pstyle->background);
+
+	// Draw the elements
+}
+
+static void containerDraw_Cloud_user_bg(GWidgetObject* gw, void* param)
+{
+	(void)param;
+
+	// Clear container area
+	gdispGFillArea(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, gw->pstyle->background);
+
+	// Draw the elements
+	gdispImageDraw(&Cloud_USER, 0, 0, 480, 272, 0, 0);
+}
 
 static void createPagePage0(void)
 {
@@ -42,7 +65,7 @@ static void createPagePage0(void)
 	wi.g.height = 272;
 	wi.g.parent = 0;
 	wi.text = "Container";
-	wi.customDraw = 0;
+	wi.customDraw = containerDraw_Unnamed;
 	wi.customParam = 0;
 	wi.customStyle = 0;
 	ghContainerPage0 = gwinContainerCreate(0, &wi, 0);
@@ -149,11 +172,32 @@ static void createPagePage1(void)
 	gwinLabelSetBorder(ghLabel2, FALSE);
 }
 
+static void createPageCloud_user_startup(void)
+{
+	GWidgetInit wi;
+	gwinWidgetClearInit(&wi);
+
+
+	// create container widget: ghContainerCloud_user_startup
+	wi.g.show = FALSE;
+	wi.g.x = 0;
+	wi.g.y = 0;
+	wi.g.width = 480;
+	wi.g.height = 272;
+	wi.g.parent = 0;
+	wi.text = "Container";
+	wi.customDraw = containerDraw_Cloud_user_bg;
+	wi.customParam = 0;
+	wi.customStyle = 0;
+	ghContainerCloud_user_startup = gwinContainerCreate(0, &wi, 0);
+}
+
 void guiShowPage(unsigned pageIndex)
 {
 	// Hide all pages
 	gwinHide(ghContainerPage0);
 	gwinHide(ghContainerPage1);
+	gwinHide(ghContainerCloud_user_startup);
 
 	// Show page selected page
 	switch (pageIndex) {
@@ -163,6 +207,10 @@ void guiShowPage(unsigned pageIndex)
 
 	case 1:
 		gwinShow(ghContainerPage1);
+		break;
+
+	case 2:
+		gwinShow(ghContainerCloud_user_startup);
 		break;
 
 	default:
@@ -180,6 +228,7 @@ void guiCreate(void)
 	dejavu_sans_24 = gdispOpenFont("DejaVuSans24");
 
 	// Prepare images
+	gdispImageOpenFile(&Cloud_USER, "rsc/Cloud_USER.gif");
 
 	// GWIN settings
 	gwinWidgetClearInit(&wi);
@@ -191,9 +240,10 @@ void guiCreate(void)
 	// Create all the display pages
 	createPagePage0();
 	createPagePage1();
+	createPageCloud_user_startup();
 
 	// Select the default display page
-	guiShowPage(1);
+	guiShowPage(2);
 
 }
 

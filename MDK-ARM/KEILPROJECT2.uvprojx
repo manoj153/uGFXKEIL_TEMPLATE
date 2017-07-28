@@ -335,7 +335,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FatFs/src/drivers;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Middlewares/Third_Party/FatFs/src;../Drivers/CMSIS/Include;..\ugfx_pr;..\ugfx;..\ugfx\boards\base\STM32F746-Discovery;..\ugfx\src\gdisp\mcufont;..\GUI\output;..\ugfx\drivers\gdisp\STM32LTDC;..\User</IncludePath>
+              <IncludePath>../Inc;../Drivers/STM32F7xx_HAL_Driver/Inc;../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;../Middlewares/Third_Party/FatFs/src/drivers;../Drivers/CMSIS/Device/ST/STM32F7xx/Include;../Middlewares/Third_Party/FatFs/src;../Drivers/CMSIS/Include;..\ugfx_pr;..\ugfx;..\ugfx\boards\base\STM32F746-Discovery;..\ugfx\src\gdisp\mcufont;..\GUI\output;..\ugfx\drivers\gdisp\STM32LTDC;..\User;..\GUI\output\rsc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>

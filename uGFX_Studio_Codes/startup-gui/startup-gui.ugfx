@@ -359,6 +359,39 @@
                         "Background Name": "Unnamed"
                     }
                 ]
+            },
+            {
+                "Background": [
+                    {
+                        "Background Name": "cloud_user_bg"
+                    },
+                    {
+                        "Static Image": {
+                            "Height": 272,
+                            "Image": {
+                                "Desktop Path": "J:/GUIB4SAT/New folder/GUI/IMG/Cloud_USER.gif",
+                                "Need Manual Init": true
+                            },
+                            "Item": {
+                                "Color": "White",
+                                "Item": {
+                                    "Height": 272,
+                                    "Lock Position": false,
+                                    "Lock Size": true,
+                                    "Snap": true,
+                                    "Width": 480,
+                                    "X": 0,
+                                    "Y": 0,
+                                    "Z": -10000,
+                                    "isBackground": true
+                                }
+                            },
+                            "Width": 480,
+                            "X": 0,
+                            "Y": 0
+                        }
+                    }
+                ]
             }
         ]
     },
@@ -367,7 +400,7 @@
             {
                 "Page": [
                     {
-                        "Background": 0,
+                        "Background": "Unnamed",
                         "Default": false,
                         "Page Name": "Page0"
                     },
@@ -391,9 +424,9 @@
                                     "GHandle": "default_pg",
                                     "Item": {
                                         "Height": 272,
-                                        "Lock Position": true,
+                                        "Lock Position": false,
                                         "Lock Size": true,
-                                        "Snap": true,
+                                        "Snap": false,
                                         "Width": 480,
                                         "X": 0,
                                         "Y": 0,
@@ -447,7 +480,7 @@
                 "Page": [
                     {
                         "Background": 0,
-                        "Default": true,
+                        "Default": false,
                         "Page Name": "Page1"
                     },
                     {
@@ -596,6 +629,15 @@
                                 }
                             }
                         }
+                    }
+                ]
+            },
+            {
+                "Page": [
+                    {
+                        "Background": "cloud_user_bg",
+                        "Default": true,
+                        "Page Name": "Cloud_user_startup"
                     }
                 ]
             }

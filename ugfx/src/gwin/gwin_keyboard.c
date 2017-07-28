@@ -122,7 +122,7 @@ static void SendVirtualKeyEventToListener(GSourceListener	*psl, GKeyboardObject 
 	// If there is no event buffer just mark a missed event
 	if (!(pe = (GEventKeyboard *)geventGetEventBuffer(psl))) {
 		// This listener is missing - save the meta events that have happened
-		psl->srcflags |= GKEYSTATE_MISSED_EVENT;
+		psl->srcflags |= (unsigned)GKEYSTATE_MISSED_EVENT;
 		return;
 	}
 

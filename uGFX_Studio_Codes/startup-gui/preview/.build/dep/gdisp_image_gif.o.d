@@ -65,7 +65,8 @@
  /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gadc/gadc.h \
  /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gadc/../../gfx.h \
  /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gaudio/gaudio.h \
- /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gaudio/../../gfx.h
+ /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gaudio/../../gfx.h \
+ /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/gdisp_image_support.h
 
 /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../gfx.h:
 
@@ -198,3 +199,5 @@ gfxconf.h:
 /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gaudio/gaudio.h:
 
 /cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/../../src/gaudio/../../gfx.h:
+
+/cygdrive/C/Users/Manojkumar/Desktop/ugfx_studio_0.15_windows/ugfx_studio_0.15_windows/ugfx_library/src/gdisp/gdisp_image_support.h:

@@ -24,6 +24,7 @@ extern GHandle ghKeyboard1;
 extern GHandle ghTextedit1;
 extern GHandle ghLabel1;
 extern GHandle ghLabel2;
+extern GHandle ghContainerCloud_user_startup;
 
 // Function Prototypes
 void guiCreate(void);

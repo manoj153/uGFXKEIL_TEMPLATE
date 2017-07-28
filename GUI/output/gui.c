@@ -7,14 +7,15 @@
 #include "colors.h"
 #include "widgetstyles.h"
 #include "gui.h"
+#include "ACCESS_CONTROL.h"
 
-// GListeners
+// GListeners //create a glistener
 GListener glistener;
 
-// GHandles
+// GHandles // Smtg related to positioning, bg_colour etc. 
 GHandle ghContainerPage0;
 GHandle default_pg;
-GHandle touch_button_df_pg;
+GHandle touch_button_df_pg; // middle top button on main page
 GHandle ghContainerPage1;
 GHandle ghKeyboard1;
 GHandle ghTextedit1;
@@ -35,7 +36,7 @@ static void createPagePage0(void)
 
 
 	// create container widget: ghContainerPage0
-	wi.g.show = FALSE;
+	wi.g.show = TRUE;
 	wi.g.x = 0;
 	wi.g.y = 0;
 	wi.g.width = 480;
@@ -55,7 +56,8 @@ static void createPagePage0(void)
 	wi.g.height = 272;
 	wi.g.parent = ghContainerPage0;
 	default_pg = gwinImageCreate(0, &wi.g);
-	gwinImageOpenFile(default_pg, "rsc/ACCESS_CONTROL.BMP");
+	//gwinImageOpenFile(default_pg, "rsc/ACCESS_CONTROL.BMP");
+	gwinImageOpenMemory(default_pg, access_control);
 
 	// create button widget: touch_button_df_pg
 	wi.g.show = TRUE;
@@ -80,7 +82,7 @@ static void createPagePage1(void)
 
 
 	// create container widget: ghContainerPage1
-	wi.g.show = FALSE;
+	wi.g.show = TRUE;
 	wi.g.x = 0;
 	wi.g.y = 0;
 	wi.g.width = 480;
@@ -153,7 +155,7 @@ void guiShowPage(unsigned pageIndex)
 {
 	// Hide all pages
 	gwinHide(ghContainerPage0);
-	gwinHide(ghContainerPage1);
+	//gwinHide(ghContainerPage1);
 
 	// Show page selected page
 	switch (pageIndex) {
@@ -176,8 +178,8 @@ void guiCreate(void)
 
 	// Prepare fonts
 	dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
-	dejavu_sans_12 = gdispOpenFont("DejaVuSans12");
-	dejavu_sans_24 = gdispOpenFont("DejaVuSans24");
+	//dejavu_sans_12 = gdispOpenFont("DejaVuSans12");
+	//dejavu_sans_24 = gdispOpenFont("DejaVuSans24");
 
 	// Prepare images
 
@@ -189,11 +191,12 @@ void guiCreate(void)
 	gwinSetDefaultBgColor(white_studio);
 
 	// Create all the display pages
-	createPagePage0();
+	//createPagePage0();
+	gwinHide(ghContainerPage0);
 	createPagePage1();
 
 	// Select the default display page
-	guiShowPage(0);
+	guiShowPage(1);
 
 }
 
@@ -203,8 +206,24 @@ void guiEventLoop(void)
 
 	while (1) {
 		// Get an event
-		pe = geventEventWait(&glistener, 0);
+		pe = geventEventWait(&glistener, 100000000);
 		switch (pe->type) {
+			case GEVENT_GWIN_BUTTON:
+				if (((GEventGWinButton*)pe)->gwin == touch_button_df_pg) {
+
+						gwinHide(ghContainerPage0);
+						guiCreate();
+//					createPagePage1();
+//					guiShowPage(1);
+				}
+				break;
+			default:
+				gwinHide(ghContainerPage0);
+				
+				guiShowPage(1);
+			
+				
+				break;
 		}
 
 	}
@@ -213,7 +232,12 @@ void guiEventLoop(void)
 void rundisplay()
 {
 	gfxInit();
-	guiCreate();
-	
+		createPagePage0();
+		guiShowPage(0);
+	//guiCreate();
+	gwinAttachMouse(0);
+	geventListenerInit(&glistener);
+	gwinAttachListener(&glistener);
+	guiEventLoop();
 }
 
