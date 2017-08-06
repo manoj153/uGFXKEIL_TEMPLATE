@@ -632,8 +632,6 @@ uint32_t              HAL_LTDC_GetError(LTDC_HandleTypeDef *hltdc);
 #define IS_LTDC_CFBLNBR(CFBLNBR)                  ((CFBLNBR) <= LTDC_LINE_NUMBER)
 #define IS_LTDC_LIPOS(LIPOS)                      ((LIPOS) <= 0x7FF)
 #define IS_LTDC_RELAOD(RELOADTYPE)                (((RELOADTYPE) == LTDC_RELOAD_IMMEDIATE) || ((RELOADTYPE) == LTDC_SRCR_VBR))
-
-
 /**
   * @}
   */ 

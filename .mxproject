@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=J:/GUIB4SAT/New folder/Inc
+HeaderPath=C:/Users/Tze Wei/Desktop/STM32_TemplateCode/uGFXKEIL_TEMPLATE/Inc
 HeaderFiles=ffconf.h;bsp_driver_sdram.h;fatfs.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;
-SourcePath=J:/GUIB4SAT/New folder/Src
+SourcePath=C:/Users/Tze Wei/Desktop/STM32_TemplateCode/uGFXKEIL_TEMPLATE/Src
 SourceFiles=ffconf.h;bsp_driver_sdram.h;fatfs.h;stm32f7xx_it.h;stm32f7xx_hal_conf.h;main.h;bsp_driver_sdram.c;fatfs.c;stm32f7xx_it.c;stm32f7xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]

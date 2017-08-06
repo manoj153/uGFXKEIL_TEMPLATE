@@ -1,0 +1,32 @@
+{
+    "author": "",
+    "design model": {
+        "display backgrounds": [
+        ],
+        "display pages": [
+        ],
+        "fonts": [
+        ],
+        "images": [
+        ],
+        "rendering functions": [
+        ],
+        "targets": [
+            {
+                "compiler": "GFX_COMPILER_UNKNOWN",
+                "cpu": "GFX_CPU_UNKNOWN",
+                "default font": "0",
+                "default widgetstyle": "0",
+                "endian": "GFX_CPU_ENDIAN_UNKNOWN",
+                "height": 270,
+                "name": "Default",
+                "operating system": "GFX_USE_OS_UNKNOWN",
+                "startup color": "0x000000",
+                "width": 480
+            }
+        ],
+        "widget styles": [
+        ]
+    },
+    "project file version": 1
+}

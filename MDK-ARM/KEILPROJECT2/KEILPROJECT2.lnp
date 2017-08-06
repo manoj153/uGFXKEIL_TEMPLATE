@@ -3,6 +3,7 @@
 "keilproject2\fatfs.o"
 "keilproject2\main.o"
 "keilproject2\stm32f7xx_hal_msp.o"
+"keilproject2\bsp_driver_sdram.o"
 "keilproject2\gdisp_lld_stm32ltdc.o"
 "keilproject2\gfx_mk.o"
 "keilproject2\stm32f746g_discovery_sdram.o"

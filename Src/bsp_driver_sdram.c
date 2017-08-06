@@ -55,14 +55,14 @@
   * @brief  Initializes the SDRAM device 
   * @retval SDRAM status
   */
-uint8_t BSP_SDRAM_Init(void)
-{
-  uint8_t sdramstatus = SDRAM_OK;
-  
-  /* place for custom code */
-  
-  return sdramstatus;
-}
+//uint8_t BSP_SDRAM_Init(void)
+//{
+//  uint8_t sdramstatus = SDRAM_OK;
+//  
+//  /* place for custom code */
+//  
+//  return sdramstatus;
+//}
 
 /**
   * @brief  Reads an mount of data from the SDRAM memory in polling mode. 

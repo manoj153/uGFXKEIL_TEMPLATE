@@ -111,3 +111,4 @@ keilproject2\gui.o: ..\ugfx\src/gaudio/gaudio.h
 keilproject2\gui.o: ..\GUI\output\widgetstyles.h
 keilproject2\gui.o: ..\GUI\output\gui.h
 keilproject2\gui.o: ..\GUI\output\rsc\ACCESS_CONTROL.h
+keilproject2\gui.o: ..\GUI\output\rsc\dooropen.h

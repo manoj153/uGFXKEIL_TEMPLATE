@@ -50,7 +50,6 @@
 #include "stm32f7xx_hal.h"
 #include "fatfs.h"
 
-
 /* USER CODE BEGIN Includes */
 
 /*UGFX NOTEPAD CODE BEGIN*/
@@ -78,10 +77,6 @@
 	//NOTEPAD GUI RELATED END*/
 
 /* USER CODE END Includes */
-	
-	
-
-
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc3;
@@ -184,7 +179,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
-	BSP_SDRAM_Init();
+
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC3_Init();
