@@ -10,3 +10,7 @@ Things to look out :
 https://openmv.io/collections/cams
 
 -They have embedded image processing option. 
+
+https://lcsc.com/
+
+--A online store to stock component. 
