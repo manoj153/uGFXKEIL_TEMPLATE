@@ -1,0 +1,15 @@
+keilproject2\fs_config.o: RTE\File_System\FS_Config.c
+keilproject2\fs_config.o: .\RTE\_KEILPROJECT2\RTE_Components.h
+keilproject2\fs_config.o: RTE\File_System\FS_Config_MC_0.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\FileSystem\Include\fs_config.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\rt_sys.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\FileSystem\Include\rl_fs_lib.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Driver\Include\Driver_MCI.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Driver\Include\Driver_Common.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Driver\Include\Driver_SPI.h
+keilproject2\fs_config.o: C:\Keil_v5\ARM\PACK\Keil\MDK-Middleware\7.4.1\FileSystem\Include\rl_fs.h
