@@ -55,7 +55,16 @@
 //    #define GFX_OS_PRE_INIT_FUNCTION                 myHardwareInitRoutine
 //    #define GFX_OS_EXTRA_INIT_FUNCTION               myOSInitRoutine
 //    #define GFX_OS_EXTRA_DEINIT_FUNCTION             myOSDeInitRoutine
+/*
+<<<<<<<<<<<<>>>>>>GFILE AND FATFS REALATED CONFIGS>>>>>>>>>>>S>>>>>>>>>>
 
+*/
+#define GFX_USE_GFILE							TRUE
+#define GFILE_NEED_FATFS 					TRUE
+#define GFILE_FATFS_EXTERNAL_LIB 	TRUE
+#define GFILE_NEED_NOAUTOMOUNT 		TRUE
+#define GFILE_NEED_PRINTG					TRUE
+//<<<<<<<<<<<<>>>>>>GFILE AND FATFS REALATED CONFIGS>>>>>>>>>E>>>>>>>>>>
 
 ///////////////////////////////////////////////////////////////////////////
 // GDISP                                                                 //

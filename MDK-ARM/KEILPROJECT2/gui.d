@@ -81,6 +81,7 @@ keilproject2\gui.o: ..\ugfx\src/gos/gos_x_threads.h
 keilproject2\gui.o: ..\ugfx\src/gos/gos_x_heap.h
 keilproject2\gui.o: ..\ugfx\src/gfile/gfile.h
 keilproject2\gui.o: ..\ugfx\src/gfile/../../gfx.h
+keilproject2\gui.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\gui.o: ..\ugfx\src/gmisc/gmisc.h
 keilproject2\gui.o: ..\ugfx\src/gtrans/gtrans.h
 keilproject2\gui.o: ..\ugfx\src/gqueue/gqueue.h

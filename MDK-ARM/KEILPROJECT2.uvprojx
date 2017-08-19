@@ -450,6 +450,11 @@
               <FileType>5</FileType>
               <FilePath>..\ugfx_pr\gfxconf.h</FilePath>
             </File>
+            <File>
+              <FileName>userSdcard.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\userSdcard.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

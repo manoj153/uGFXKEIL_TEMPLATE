@@ -51,7 +51,7 @@
 #include "fatfs.h"
 
 /* USER CODE BEGIN Includes */
-<<---------TEST_CODES----S----->>
+/*<<---------TEST_CODES----S----->>*/
 /*UGFX NOTEPAD CODE BEGIN*/
 //#define COLOR_SIZE	20
 //#define PEN_SIZE	20
@@ -75,7 +75,8 @@
 //		extern void drawScreen(void);
 //extern void rundisplay(void);
 //NOTEPAD GUI RELATED END*/
-<<---------TEST_CODES----E----->>
+/*<<---------TEST_CODES----E----->>*/
+extern int ugfxfatfsdemo();
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -204,6 +205,7 @@ int main(void)
 
   /* USER CODE BEGIN 2 */	
 	 //rundisplay();
+	 ugfxfatfsdemo();
   /* USER CODE END 2 */
 
   /* Infinite loop */

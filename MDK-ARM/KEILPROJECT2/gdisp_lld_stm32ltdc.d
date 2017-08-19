@@ -80,6 +80,7 @@ keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gos/gos_x_threads.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gos/gos_x_heap.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gfile/gfile.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gfile/../../gfx.h
+keilproject2\gdisp_lld_stm32ltdc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gmisc/gmisc.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gtrans/gtrans.h
 keilproject2\gdisp_lld_stm32ltdc.o: ..\ugfx\src/gqueue/gqueue.h

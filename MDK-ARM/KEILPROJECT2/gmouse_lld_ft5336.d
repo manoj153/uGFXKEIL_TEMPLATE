@@ -80,6 +80,7 @@ keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gos/gos_x_threads.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gos/gos_x_heap.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gfile/gfile.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gfile/../../gfx.h
+keilproject2\gmouse_lld_ft5336.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gmisc/gmisc.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gtrans/gtrans.h
 keilproject2\gmouse_lld_ft5336.o: ..\ugfx\src/gqueue/gqueue.h

@@ -508,10 +508,6 @@ static void createWidgets(void) {
 }
 
 
-void sdtodisplay()
-{
-	
-}
 
 
 

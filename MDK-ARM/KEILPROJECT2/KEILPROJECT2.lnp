@@ -11,6 +11,7 @@
 "keilproject2\gmouse_lld_ft5336.o"
 "keilproject2\stm32f7_i2c.o"
 "keilproject2\gui.o"
+"keilproject2\usersdcard.o"
 "keilproject2\startup_stm32f746xx.o"
 "keilproject2\stm32f7xx_hal_dsi.o"
 "keilproject2\stm32f7xx_hal_rtc.o"

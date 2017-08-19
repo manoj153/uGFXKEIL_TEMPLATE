@@ -80,6 +80,7 @@ keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discove
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gos/gos_x_heap.h
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gfile/gfile.h
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gfile/../../gfx.h
+keilproject2\stm32f746g_discovery_sdram.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gmisc/gmisc.h
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gtrans/gtrans.h
 keilproject2\stm32f746g_discovery_sdram.o: ..\ugfx\boards\base\STM32F746-Discovery\../../../src/gqueue/gqueue.h

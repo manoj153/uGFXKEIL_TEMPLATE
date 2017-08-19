@@ -81,6 +81,7 @@ keilproject2\gfx_mk.o: ..\ugfx\src\../src/gos/gos_x_threads.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gos/gos_x_heap.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gfile/gfile.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gfile/../../gfx.h
+keilproject2\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gmisc/gmisc.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gtrans/gtrans.h
 keilproject2\gfx_mk.o: ..\ugfx\src\../src/gqueue/gqueue.h
@@ -179,7 +180,6 @@ keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_class.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_widget.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_wm.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_console.c
-keilproject2\gfx_mk.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_graph.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_button.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gwin/gwin_slider.c
@@ -223,6 +223,13 @@ keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_ram.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_rom.c
 keilproject2\gfx_mk.o: ..\ugfx_pr\romfs_files.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_fatfs.c
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fatfs_wrapper.h
+keilproject2\gfx_mk.o: ../Inc/ffconf.h
+keilproject2\gfx_mk.o: ../Inc/bsp_driver_sdram.h
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/integer.h
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ff.h
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ffconf.h
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/diskio.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_petitfs.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_mem.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_chibios.c
