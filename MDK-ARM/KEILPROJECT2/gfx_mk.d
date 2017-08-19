@@ -225,7 +225,7 @@ keilproject2\gfx_mk.o: ..\ugfx_pr\romfs_files.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fs_fatfs.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fatfs_wrapper.h
 keilproject2\gfx_mk.o: ../Inc/ffconf.h
-keilproject2\gfx_mk.o: ../Inc/bsp_driver_sdram.h
+keilproject2\gfx_mk.o: ../Inc/bsp_driver_sd.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/integer.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ff.h
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ffconf.h

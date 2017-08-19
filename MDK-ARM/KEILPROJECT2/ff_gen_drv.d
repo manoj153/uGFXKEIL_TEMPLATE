@@ -49,4 +49,4 @@ keilproject2\ff_gen_drv.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim
 keilproject2\ff_gen_drv.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 keilproject2\ff_gen_drv.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 keilproject2\ff_gen_drv.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-keilproject2\ff_gen_drv.o: ../Inc/bsp_driver_sdram.h
+keilproject2\ff_gen_drv.o: ../Inc/bsp_driver_sd.h

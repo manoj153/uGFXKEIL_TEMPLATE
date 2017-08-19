@@ -48,7 +48,7 @@ keilproject2\main.o: ../Inc/fatfs.h
 keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/ff.h
 keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/integer.h
 keilproject2\main.o: ../Inc/ffconf.h
-keilproject2\main.o: ../Inc/bsp_driver_sdram.h
+keilproject2\main.o: ../Inc/bsp_driver_sd.h
 keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/ff_gen_drv.h
 keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
-keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.h
+keilproject2\main.o: ../Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.h

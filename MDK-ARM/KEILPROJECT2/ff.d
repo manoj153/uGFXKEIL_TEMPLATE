@@ -47,6 +47,6 @@ keilproject2\ff.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 keilproject2\ff.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 keilproject2\ff.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 keilproject2\ff.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-keilproject2\ff.o: ../Inc/bsp_driver_sdram.h
+keilproject2\ff.o: ../Inc/bsp_driver_sd.h
 keilproject2\ff.o: ../Middlewares/Third_Party/FatFs/src/diskio.h
 keilproject2\ff.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

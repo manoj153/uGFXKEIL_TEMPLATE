@@ -1,8 +1,8 @@
 /**
  ******************************************************************************
-  * @file    bsp_driver_sdram.h (based on stm32756g_eval_sdram.h)
-  * @brief   This file contains the common defines and functions prototypes for  
-  *          the bsp_driver_sdram.c driver.
+  * @file    bsp_driver_sd.h (based on stm32756g_eval_sd.h)
+  * @brief   This file contains the common defines and functions prototypes for 
+  *          the bsp_driver_sd.c driver.
   ******************************************************************************
   * This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -46,10 +46,10 @@
   *
   ******************************************************************************
   */
-  
+
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F7XX_SDRAM_H
-#define __STM32F7XX_SDRAM_H
+#ifndef __STM32F7XX_SD_H
+#define __STM32F7XX_SD_H
 
 #ifdef __cplusplus
  extern "C" {
@@ -57,80 +57,83 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f7xx_hal.h"
-#include "stm32f7xx_hal_sdram.h"
-/*---------- Handle for SDRAM -----------*/
-#define _HSDRAM      hsdram1 
+
+/*---------- Defines for SDMMC -----------*/
+#define _HSD      hsd1 
  
-/* USER CODE BEGIN 0 */
+#define _SD_CARD_INFO SDCardInfo1
+
+/* Exported constants --------------------------------------------------------*/ 
 
 /** 
-  * @brief  SDRAM status structure definition  
-  */     
-#define   SDRAM_OK         ((uint8_t)0x00)
-#define   SDRAM_ERROR      ((uint8_t)0x01)
-
-/** @defgroup STM32756G_EVAL_SDRAM_Exported_Constants
-  * @{
-  */ 
-#define SDRAM_DEVICE_ADDR  ((uint32_t)0xC0000000)
-#define SDRAM_DEVICE_SIZE  ((uint32_t)0x800000)  /* SDRAM device size in MBytes */
-
-/* #define SDRAM_MEMORY_WIDTH            FMC_SDRAM_MEM_BUS_WIDTH_8  */
-/* #define SDRAM_MEMORY_WIDTH            FMC_SDRAM_MEM_BUS_WIDTH_16 */
-/* #define SDRAM_MEMORY_WIDTH            FMC_SDRAM_MEM_BUS_WIDTH_32 */
-
-/* #define SDCLOCK_PERIOD                FMC_SDRAM_CLOCK_PERIOD_2 */
-/* #define SDCLOCK_PERIOD                FMC_SDRAM_CLOCK_PERIOD_3 */   
-
-/* #define REFRESH_COUNT                ((uint32_t)0x0603) */      /* SDRAM refresh counter (100Mhz SD clock) */
-   
-#define SDRAM_TIMEOUT     ((uint32_t)0xFFFF) 
-
-/* DMA definitions for SDRAM DMA transfer */
-/*
-#define __DMAx_CLK_ENABLE                 __HAL_RCC_DMA2_CLK_ENABLE
-#define __DMAx_CLK_DISABLE                __HAL_RCC_DMA2_CLK_DISABLE
-#define SDRAM_DMAx_CHANNEL                DMA_CHANNEL_0
-#define SDRAM_DMAx_STREAM                 DMA2_Stream0  
-#define SDRAM_DMAx_IRQn                   DMA2_Stream0_IRQn
-#define SDRAM_DMAx_IRQHandler             DMA2_Stream0_IRQHandler  
-*/ 
+  * @brief SD Card information structure 
+  */
+#ifndef BSP_SD_CardInfo
+  #define BSP_SD_CardInfo HAL_SD_CardInfoTypeDef
+#endif
 
 /**
-  * @brief  FMC SDRAM Mode definition register defines
-  */
+  * @brief  SD status structure definition  
+  */     
+#define   MSD_OK                        ((uint8_t)0x00)
+#define   MSD_ERROR                     ((uint8_t)0x01)
+#define   MSD_ERROR_SD_NOT_PRESENT      ((uint8_t)0x02)
+
+/** 
+  * @brief  SD transfer state definition  
+  */     
+#define   SD_TRANSFER_OK                ((uint8_t)0x00)
+#define   SD_TRANSFER_BUSY              ((uint8_t)0x01)
+
+/** @defgroup STM32756G_EVAL_SD_Exported_Constants
+  * @{
+  */ 
+#define SD_PRESENT               ((uint8_t)0x01)
+#define SD_NOT_PRESENT           ((uint8_t)0x00)
+
+#define SD_DATATIMEOUT           ((uint32_t)100000000)
+
+#ifdef OLD_API
+/* kept to avoid issue when migrating old projects. */
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */ 
+#else
+/* USER CODE BEGIN BSP_H_CODE */
+/* DMA definitions for SD DMA transfer */
 /*
-#define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
-#define SDRAM_MODEREG_BURST_LENGTH_2             ((uint16_t)0x0001)
-#define SDRAM_MODEREG_BURST_LENGTH_4             ((uint16_t)0x0002)
-#define SDRAM_MODEREG_BURST_LENGTH_8             ((uint16_t)0x0004)
-#define SDRAM_MODEREG_BURST_TYPE_SEQUENTIAL      ((uint16_t)0x0000)
-#define SDRAM_MODEREG_BURST_TYPE_INTERLEAVED     ((uint16_t)0x0008)
-#define SDRAM_MODEREG_CAS_LATENCY_2              ((uint16_t)0x0020)
-#define SDRAM_MODEREG_CAS_LATENCY_3              ((uint16_t)0x0030)
-#define SDRAM_MODEREG_OPERATING_MODE_STANDARD    ((uint16_t)0x0000)
-#define SDRAM_MODEREG_WRITEBURST_MODE_PROGRAMMED ((uint16_t)0x0000)
-#define SDRAM_MODEREG_WRITEBURST_MODE_SINGLE     ((uint16_t)0x0200)
+#define __DMAx_TxRx_CLK_ENABLE            __HAL_RCC_DMA2_CLK_ENABLE
+#define SD_DMAx_Tx_CHANNEL                DMA_CHANNEL_4
+#define SD_DMAx_Rx_CHANNEL                DMA_CHANNEL_4
+#define SD_DMAx_Tx_STREAM                 DMA2_Stream6  
+#define SD_DMAx_Rx_STREAM                 DMA2_Stream3  
+#define SD_DMAx_Tx_IRQn                   DMA2_Stream6_IRQn
+#define SD_DMAx_Rx_IRQn                   DMA2_Stream3_IRQn
+#define SD_DMAx_Tx_IRQHandler             DMA2_Stream6_IRQHandler   
+#define SD_DMAx_Rx_IRQHandler             DMA2_Stream3_IRQHandler 
+#define SD_DetectIRQHandler()             HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_8)
 */
 
-extern SDRAM_HandleTypeDef _HSDRAM;
-
-/** @defgroup STM32756G_EVAL_SDRAM_Exported_Functions
-  * @{
-  */  
-uint8_t BSP_SDRAM_Init(void);
-uint8_t BSP_SDRAM_ReadData(uint32_t uwStartAddress, uint32_t *pData, uint32_t uwDataSize);
-uint8_t BSP_SDRAM_ReadData_DMA(uint32_t uwStartAddress, uint32_t *pData, uint32_t uwDataSize);
-uint8_t BSP_SDRAM_WriteData(uint32_t uwStartAddress, uint32_t *pData, uint32_t uwDataSize);
-uint8_t BSP_SDRAM_WriteData_DMA(uint32_t uwStartAddress, uint32_t *pData, uint32_t uwDataSize);
-uint8_t BSP_SDRAM_Sendcmd(FMC_SDRAM_CommandTypeDef *SdramCmd);
-
-/* USER CODE END 0 */
+/* Exported functions --------------------------------------------------------*/   
+uint8_t BSP_SD_Init(void);
+uint8_t BSP_SD_ITConfig(void);
+void    BSP_SD_DetectIT(void);
+void    BSP_SD_DetectCallback(void);
+uint8_t BSP_SD_ReadBlocks(uint32_t *pData, uint32_t ReadAddr, uint32_t NumOfBlocks, uint32_t Timeout);
+uint8_t BSP_SD_WriteBlocks(uint32_t *pData, uint32_t WriteAddr, uint32_t NumOfBlocks, uint32_t Timeout);
+uint8_t BSP_SD_ReadBlocks_DMA(uint32_t *pData, uint32_t ReadAddr, uint32_t NumOfBlocks);
+uint8_t BSP_SD_WriteBlocks_DMA(uint32_t *pData, uint32_t WriteAddr, uint32_t NumOfBlocks);
+uint8_t BSP_SD_Erase(uint32_t StartAddr, uint32_t EndAddr);
+uint8_t BSP_SD_GetCardState(void);
+void    BSP_SD_GetCardInfo(BSP_SD_CardInfo *CardInfo);
+uint8_t BSP_SD_IsDetected(void);
+/* USER CODE END BSP_H_CODE */
+#endif
    
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __STM32F7XX_SDRAM_H */
+#endif /* __STM32F7XX_SD_H */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

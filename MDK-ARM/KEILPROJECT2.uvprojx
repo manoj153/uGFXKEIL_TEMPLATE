@@ -336,7 +336,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F746xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;  ../Drivers/STM32F7xx_HAL_Driver/Inc;  ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;  ../Middlewares/Third_Party/FatFs/src/drivers;  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;  ../Middlewares/Third_Party/FatFs/src;  ../Drivers/CMSIS/Include;  ..\ugfx_pr;  ..\ugfx;  ..\ugfx\boards\base\STM32F746-Discovery;  ..\ugfx\src\gdisp\mcufont;  ..\GUI\output;  ..\ugfx\drivers\gdisp\STM32LTDC;  ..\User;  ..\GUI\output\rsc</IncludePath>
+              <IncludePath>../Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc;   ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;   ../Middlewares/Third_Party/FatFs/src/drivers;   ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;   ../Middlewares/Third_Party/FatFs/src;   ../Drivers/CMSIS/Include;   ..\ugfx_pr;   ..\ugfx;   ..\ugfx\boards\base\STM32F746-Discovery;   ..\ugfx\src\gdisp\mcufont;   ..\GUI\output;   ..\ugfx\drivers\gdisp\STM32LTDC;   ..\User;   ..\GUI\output\rsc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -401,9 +401,9 @@
               <FilePath>../Src/stm32f7xx_hal_msp.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_driver_sdram.c</FileName>
+              <FileName>bsp_driver_sd.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/bsp_driver_sdram.c</FilePath>
+              <FilePath>../Src/bsp_driver_sd.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -651,14 +651,14 @@
               <FilePath>../Middlewares/Third_Party/FatFs/src/ff.c</FilePath>
             </File>
             <File>
-              <FileName>sdram_diskio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/drivers/sdram_diskio.c</FilePath>
-            </File>
-            <File>
               <FileName>diskio.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/FatFs/src/diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>sd_diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Middlewares/Third_Party/FatFs/src/drivers/sd_diskio.c</FilePath>
             </File>
           </Files>
         </Group>

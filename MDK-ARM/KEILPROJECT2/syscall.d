@@ -48,4 +48,4 @@ keilproject2\syscall.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 keilproject2\syscall.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 keilproject2\syscall.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 keilproject2\syscall.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-keilproject2\syscall.o: ../Inc/bsp_driver_sdram.h
+keilproject2\syscall.o: ../Inc/bsp_driver_sd.h

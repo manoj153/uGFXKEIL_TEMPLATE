@@ -51,9 +51,27 @@
 #include "fatfs.h"
 
 /* USER CODE BEGIN Includes */
+
+//YTB tutorial method S @ //<<<<SD CARD file writing demo>>>S>>
+FRESULT res;
+FATFS SDFatFS;
+FIL myFile;
+char bufferwr[30] = "Manojkumar\r\n" ; 
+char bufferrd[30];
+char SDPath[10];
+uint32_t byteswritten, bytesread;
+
+enum _bool
+{
+false = 0,
+true =1
+};typedef enum _bool boolean; 
+
+//YTB tutorial method E
+
 /*<<---------TEST_CODES----S----->>*/
 /*UGFX NOTEPAD CODE BEGIN*/
-//#define COLOR_SIZE	20
+//#define COLOFR_SIZE	20
 //#define PEN_SIZE	20
 //#define OFFSET		3
 
@@ -203,21 +221,25 @@ int main(void)
   MX_USART6_UART_Init();
   MX_FATFS_Init();
 
-  /* USER CODE BEGIN 2 */	
-	 //rundisplay();
-	 ugfxfatfsdemo();
+  /* USER CODE BEGIN 2 */
+	 //<<<<SD CARD file writing demo>>>S>>
+	 res = BSP_SD_Init();
+	 res = f_mount(&SDFatFS, "", 1);
+	 res = f_open(&myFile, "manoj.txt", FA_OPEN_ALWAYS|FA_WRITE|FA_WRITE);
+	 res = f_lseek(&myFile, f_size(&myFile));
+	 f_printf(&myFile, "%s", bufferwr);
+	 f_close(&myFile);
+	 //<<<<SD CARD file writing demo>>>E>>
+	 
   /* USER CODE END 2 */
 
   /* Infinite loop */
-  
-	/* USER CODE BEGIN WHILE */
+  /* USER CODE BEGIN WHILE */
   while (1)
   {
   /* USER CODE END WHILE */
 
-  
-		
-	/* USER CODE BEGIN 3 */
+  /* USER CODE BEGIN 3 */
 		
   }
   /* USER CODE END 3 */
@@ -605,12 +627,6 @@ static void MX_SDMMC1_SD_Init(void)
   hsd1.Init.BusWide = SDMMC_BUS_WIDE_1B;
   hsd1.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
   hsd1.Init.ClockDiv = 2;
-  if (HAL_SD_Init(&hsd1) != HAL_OK)
-  {
-    _Error_Handler(__FILE__, __LINE__);
-  }
-
-  HAL_SD_ConfigWideBusOperation(&hsd1, SDMMC_BUS_WIDE_4B);
 
 }
 
@@ -1314,7 +1330,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void sdcardemo()
+{
+	
+}
 /* USER CODE END 4 */
 
 /**

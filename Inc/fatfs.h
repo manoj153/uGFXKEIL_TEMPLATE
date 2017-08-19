@@ -55,14 +55,14 @@
 
 #include "ff.h"
 #include "ff_gen_drv.h"
-#include "sdram_diskio.h" /* defines SDRAMDISK_Driver as external */
+#include "sd_diskio.h" /* defines SD_Driver as external */
 
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
-extern uint8_t retSDRAMDISK; /* Return value for SDRAMDISK */
-extern char SDRAMDISK_Path[4]; /* SDRAMDISK logical drive path */
+extern uint8_t retSD; /* Return value for SD */
+extern char SD_Path[4]; /* SD logical drive path */
 
 void MX_FATFS_Init(void);
 

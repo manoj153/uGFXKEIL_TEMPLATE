@@ -48,8 +48,8 @@
 
 #include "fatfs.h"
 
-uint8_t retSDRAMDISK;    /* Return value for SDRAMDISK */
-char SDRAMDISK_Path[4];  /* SDRAMDISK logical drive path */
+uint8_t retSD;    /* Return value for SD */
+char SD_Path[4];  /* SD logical drive path */
 
 /* USER CODE BEGIN Variables */
 
@@ -57,8 +57,8 @@ char SDRAMDISK_Path[4];  /* SDRAMDISK logical drive path */
 
 void MX_FATFS_Init(void) 
 {
-  /*## FatFS: Link the SDRAMDISK driver ###########################*/
-  retSDRAMDISK = FATFS_LinkDriver(&SDRAMDISK_Driver, SDRAMDISK_Path);
+  /*## FatFS: Link the SD driver ###########################*/
+  retSD = FATFS_LinkDriver(&SD_Driver, SD_Path);
 
   /* USER CODE BEGIN Init */
   /* additional user code for init */     

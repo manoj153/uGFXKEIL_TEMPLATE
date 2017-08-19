@@ -3,7 +3,7 @@
 "keilproject2\fatfs.o"
 "keilproject2\main.o"
 "keilproject2\stm32f7xx_hal_msp.o"
-"keilproject2\bsp_driver_sdram.o"
+"keilproject2\bsp_driver_sd.o"
 "keilproject2\gdisp_lld_stm32ltdc.o"
 "keilproject2\gfx_mk.o"
 "keilproject2\stm32f746g_discovery_sdram.o"
@@ -47,8 +47,8 @@
 "keilproject2\ff_gen_drv.o"
 "keilproject2\syscall.o"
 "keilproject2\ff.o"
-"keilproject2\sdram_diskio.o"
 "keilproject2\diskio.o"
+"keilproject2\sd_diskio.o"
 --library_type=microlib --strict --scatter "KEILPROJECT2\KEILPROJECT2.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
