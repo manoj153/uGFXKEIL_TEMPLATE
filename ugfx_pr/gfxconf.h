@@ -59,11 +59,14 @@
 <<<<<<<<<<<<>>>>>>GFILE AND FATFS REALATED CONFIGS>>>>>>>>>>>S>>>>>>>>>>
 
 */
-#define GFX_USE_GFILE							TRUE
-#define GFILE_NEED_FATFS 					TRUE
-#define GFILE_FATFS_EXTERNAL_LIB 	TRUE
-#define GFILE_NEED_NOAUTOMOUNT 		TRUE
-#define GFILE_NEED_PRINTG					TRUE
+
+#define GFX_USE_GFILE					TRUE
+#define GFILE_NEED_USERFS				TRUE
+#define GFILE_NEED_FATFS 				FALSE
+#define GFILE_FATFS_EXTERNAL_LIB 		FALSE
+#define GFILE_NEED_NOAUTOMOUNT 			FALSE
+#define GFILE_NEED_PRINTG				TRUE
+
 //<<<<<<<<<<<<>>>>>>GFILE AND FATFS REALATED CONFIGS>>>>>>>>>E>>>>>>>>>>
 
 ///////////////////////////////////////////////////////////////////////////

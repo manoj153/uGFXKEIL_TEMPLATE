@@ -94,6 +94,7 @@ true =1
 //extern void rundisplay(void);
 //NOTEPAD GUI RELATED END*/
 /*<<---------TEST_CODES----E----->>*/
+
 extern int ugfxfatfsdemo();
 /* USER CODE END Includes */
 
@@ -223,14 +224,14 @@ int main(void)
 
   /* USER CODE BEGIN 2 */
 	 //<<<<SD CARD file writing demo>>>S>>
-	 res = BSP_SD_Init();
-	 res = f_mount(&SDFatFS, "", 1);
-	 res = f_open(&myFile, "manoj.txt", FA_OPEN_ALWAYS|FA_WRITE|FA_WRITE);
-	 res = f_lseek(&myFile, f_size(&myFile));
-	 f_printf(&myFile, "%s", bufferwr);
-	 f_close(&myFile);
+//	 res = BSP_SD_Init();
+//	 res = f_mount(&SDFatFS, "", 1);
+//	 res = f_open(&myFile, "manoj.txt", FA_OPEN_ALWAYS|FA_WRITE|FA_WRITE);
+//	 res = f_lseek(&myFile, f_size(&myFile));
+//	 f_printf(&myFile, "%s", bufferwr);
+//	 f_close(&myFile);
 	 //<<<<SD CARD file writing demo>>>E>>
-	 
+	 ugfxfatfsdemo();
   /* USER CODE END 2 */
 
   /* Infinite loop */

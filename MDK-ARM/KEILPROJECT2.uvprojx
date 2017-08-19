@@ -54,7 +54,7 @@
           <CreateLib>0</CreateLib>
           <CreateHexFile>0</CreateHexFile>
           <DebugInformation>1</DebugInformation>
-          <BrowseInformation>0</BrowseInformation>
+          <BrowseInformation>1</BrowseInformation>
           <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -134,7 +134,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4100</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
@@ -411,14 +411,14 @@
           <GroupName>ugfx</GroupName>
           <Files>
             <File>
-              <FileName>gdisp_lld_STM32LTDC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\ugfx\drivers\gdisp\STM32LTDC\gdisp_lld_STM32LTDC.c</FilePath>
-            </File>
-            <File>
               <FileName>gfx_mk.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\ugfx\src\gfx_mk.c</FilePath>
+            </File>
+            <File>
+              <FileName>gdisp_lld_STM32LTDC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\ugfx\drivers\gdisp\STM32LTDC\gdisp_lld_STM32LTDC.c</FilePath>
             </File>
             <File>
               <FileName>stm32f746g_discovery_sdram.c</FileName>

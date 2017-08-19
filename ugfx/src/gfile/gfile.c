@@ -6,6 +6,7 @@
  */
 
 #include "../../gfx.h"
+//manually define user fs as true to test
 
 #if GFX_USE_GFILE
 
@@ -16,8 +17,10 @@
  * Virtual file-systems that have special open() calls do not need to
  * be in this list.
  */
+ 
 #if GFILE_NEED_USERFS
 	extern const GFILEVMT FsUSERVMT;
+	
 #endif
 #if GFILE_NEED_ROMFS
 	extern const GFILEVMT FsROMVMT;
@@ -31,6 +34,7 @@
 #if GFILE_NEED_RAMFS
 	extern const GFILEVMT FsRAMVMT;
 #endif
+
 
 
 /**

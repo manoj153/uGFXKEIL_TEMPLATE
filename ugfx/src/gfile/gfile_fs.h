@@ -10,7 +10,7 @@
  * @brief   GFILE file system header.
  *
  */
-
+#define GFILE_NEED_USERFS TRUE //MANUAL DECLARE
 #ifndef _GFILE_FS_H
 #define _GFILE_FS_H
 
@@ -31,6 +31,8 @@ struct GFILE {
 	void *					obj;
 	long int				pos;
 };
+
+
 
 struct gfileList {
 	const struct GFILEVMT *	vmt;
@@ -66,6 +68,8 @@ typedef struct GFILEVMT {
 		void		(*flclose)	(gfileList *pfl);
 	#endif
 } GFILEVMT;
+
+const GFILEVMT FsUSERVMT; //here is how I fixed the error <!!!!!!!!!!!>
 
 GFILE *_gfileFindSlot(const char *mode);
 

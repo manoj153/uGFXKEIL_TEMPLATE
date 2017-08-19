@@ -25,6 +25,7 @@ int ugfxfatfsdemo(void) {
 	const char msg[] = "Hello file!";		// String to write to a file.
 	
 	/* Call the µGFX init routine. */
+	 BSP_SD_Init();
 	gfxInit();
 	
 	/* Mount the file system. */

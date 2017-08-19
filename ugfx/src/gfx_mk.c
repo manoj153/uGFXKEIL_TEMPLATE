@@ -5,6 +5,9 @@
  *              http://ugfx.org/license.html
  */
 
+
+
+
 #include "gfx.c"
 #include "gos/gos_mk.c"
 #include "gdriver/gdriver_mk.c"
@@ -19,3 +22,5 @@
 #include "gmisc/gmisc_mk.c"
 #include "gfile/gfile_mk.c"
 #include "gtrans/gtrans_mk.c"
+
+extern const GFILEVMT FsUSERVMT;
