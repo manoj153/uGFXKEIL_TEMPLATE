@@ -3,7 +3,7 @@
 <title>Static Call Graph - [KEILPROJECT2\KEILPROJECT2.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image KEILPROJECT2\KEILPROJECT2.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sun Aug 06 11:01:08 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Sat Aug 19 10:19:02 2017
 <BR><P>
 <H3>Maximum Stack Usage =        480 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -3089,6 +3089,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalibrateMouse
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ft5336Init
+<LI><a href="#[25a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rundisplay
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BSP_SDRAM_Initialization_sequence
 </UL>
 
@@ -3727,7 +3728,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gfx_mk.o(.constdata)
 </UL>
-<P><STRONG><a name="[25a]"></a>rundisplay</STRONG> (Thumb, 388 bytes, Stack size 0 bytes, gui.o(i.rundisplay))
+<P><STRONG><a name="[25a]"></a>rundisplay</STRONG> (Thumb, 394 bytes, Stack size 0 bytes, gui.o(i.rundisplay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 236<LI>Call Chain = rundisplay &rArr; gwinPrintf &rArr; gwinPutChar &rArr; _gwinDrawStart &rArr; _gwinDrawEnd &rArr; _gwinFlushRedraws &rArr; gdispGSetClip &rArr; gfxMutexEnter &rArr; gfxYield &rArr; cleanUpDeadThreads &rArr; gfxFree
 </UL>
 <BR>[Calls]<UL><LI><a href="#[23f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;guiShowPage
@@ -3741,6 +3742,7 @@ Global Symbols
 <LI><a href="#[202]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gwinKeyboardGetEventSource
 <LI><a href="#[1c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gwinDestroy
 <LI><a href="#[240]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gwinAttachListener
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gfxSleepMilliseconds
 <LI><a href="#[230]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gfxInit
 <LI><a href="#[1dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;geventListenerInit
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;geventEventWait
@@ -3838,7 +3840,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[172]"></a>MX_SDMMC1_SD_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, main.o(i.MX_SDMMC1_SD_Init))
+<P><STRONG><a name="[172]"></a>MX_SDMMC1_SD_Init</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, main.o(i.MX_SDMMC1_SD_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216<LI>Call Chain = MX_SDMMC1_SD_Init &rArr; HAL_SD_ConfigWideBusOperation &rArr; SD_WideBus_Enable &rArr; SD_FindSCR &rArr; SDMMC_CmdBlockLength &rArr; SDMMC_GetCmdResp1 &rArr; SDMMC_GetResponse
 </UL>
 <BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SD_Init

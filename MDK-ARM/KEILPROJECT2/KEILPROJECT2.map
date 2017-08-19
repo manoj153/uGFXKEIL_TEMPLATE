@@ -1288,6 +1288,7 @@ Section Cross References
     gui.o(i.rundisplay) refers to gui.o(i.createWidgets) for createWidgets
     gui.o(i.rundisplay) refers to gfx_mk.o(i.gwinPrintf) for gwinPrintf
     gui.o(i.rundisplay) refers to gui.o(i.createDoorOpen) for createDoorOpen
+    gui.o(i.rundisplay) refers to gfx_mk.o(i.gfxSleepMilliseconds) for gfxSleepMilliseconds
     gui.o(i.rundisplay) refers to gui.o(.data) for dejavu_sans_16
     gui.o(i.rundisplay) refers to gfx_mk.o(.constdata) for WhiteWidgetStyle
     gui.o(i.rundisplay) refers to gfx_mk.o(.data) for GDISP
@@ -4142,7 +4143,7 @@ Image Symbol Table
     i.MX_RTC_Init                            0x00205ecc   Section        0  main.o(i.MX_RTC_Init)
     MX_RTC_Init                              0x00205ecd   Thumb Code   274  main.o(i.MX_RTC_Init)
     i.MX_SDMMC1_SD_Init                      0x00205ff8   Section        0  main.o(i.MX_SDMMC1_SD_Init)
-    MX_SDMMC1_SD_Init                        0x00205ff9   Thumb Code    54  main.o(i.MX_SDMMC1_SD_Init)
+    MX_SDMMC1_SD_Init                        0x00205ff9   Thumb Code    56  main.o(i.MX_SDMMC1_SD_Init)
     i.MX_SPDIFRX_Init                        0x00206048   Section        0  main.o(i.MX_SPDIFRX_Init)
     MX_SPDIFRX_Init                          0x00206049   Thumb Code    54  main.o(i.MX_SPDIFRX_Init)
     i.MX_SPI2_Init                           0x00206094   Section        0  main.o(i.MX_SPI2_Init)
@@ -4629,97 +4630,97 @@ Image Symbol Table
     i.resizeText                             0x00213c26   Section        0  gfx_mk.o(i.resizeText)
     resizeText                               0x00213c27   Thumb Code    96  gfx_mk.o(i.resizeText)
     i.rundisplay                             0x00213c88   Section        0  gui.o(i.rundisplay)
-    i.scaled_pixel_callback                  0x00213ea4   Section        0  gfx_mk.o(i.scaled_pixel_callback)
-    scaled_pixel_callback                    0x00213ea5   Thumb Code    90  gfx_mk.o(i.scaled_pixel_callback)
-    i.set_backlight                          0x00213f00   Section        0  gdisp_lld_stm32ltdc.o(i.set_backlight)
-    set_backlight                            0x00213f01   Thumb Code    32  gdisp_lld_stm32ltdc.o(i.set_backlight)
-    i.skip_pixels                            0x00213f24   Section        0  gfx_mk.o(i.skip_pixels)
-    skip_pixels                              0x00213f25   Thumb Code    46  gfx_mk.o(i.skip_pixels)
-    i.strip_spaces                           0x00213f52   Section        0  gfx_mk.o(i.strip_spaces)
-    strip_spaces                             0x00213f53   Thumb Code    92  gfx_mk.o(i.strip_spaces)
-    i.vline_clip                             0x00213fae   Section        0  gfx_mk.o(i.vline_clip)
-    vline_clip                               0x00213faf   Thumb Code   150  gfx_mk.o(i.vline_clip)
-    i.write_bin_codeword                     0x00214044   Section        0  gfx_mk.o(i.write_bin_codeword)
-    write_bin_codeword                       0x00214045   Thumb Code    92  gfx_mk.o(i.write_bin_codeword)
-    i.write_glyph_codeword                   0x002140a0   Section        0  gfx_mk.o(i.write_glyph_codeword)
-    write_glyph_codeword                     0x002140a1   Thumb Code    56  gfx_mk.o(i.write_glyph_codeword)
-    i.write_pixels                           0x002140d8   Section        0  gfx_mk.o(i.write_pixels)
-    write_pixels                             0x002140d9   Thumb Code   104  gfx_mk.o(i.write_pixels)
-    i.write_ref_codeword                     0x00214140   Section        0  gfx_mk.o(i.write_ref_codeword)
-    write_ref_codeword                       0x00214141   Thumb Code    80  gfx_mk.o(i.write_ref_codeword)
-    i.write_ref_dictentry                    0x00214190   Section        0  gfx_mk.o(i.write_ref_dictentry)
-    write_ref_dictentry                      0x00214191   Thumb Code    64  gfx_mk.o(i.write_ref_dictentry)
-    i.write_reg                              0x002141d0   Section        0  gmouse_lld_ft5336.o(i.write_reg)
-    write_reg                                0x002141d1   Thumb Code    22  gmouse_lld_ft5336.o(i.write_reg)
-    i.write_rle_dictentry                    0x002141ec   Section        0  gfx_mk.o(i.write_rle_dictentry)
-    write_rle_dictentry                      0x002141ed   Thumb Code   164  gfx_mk.o(i.write_rle_dictentry)
-    .constdata                               0x00214290   Section      208  gdisp_lld_stm32ltdc.o(.constdata)
-    driverCfg                                0x002142f0   Data         104  gdisp_lld_stm32ltdc.o(.constdata)
-    fmt2Bpp                                  0x00214358   Data           8  gdisp_lld_stm32ltdc.o(.constdata)
-    .constdata                               0x00214360   Section    15840  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_dictionary_data 0x00214360   Data         740  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_dictionary_offsets 0x00214644   Data         376  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_glyph_data_0  0x002147bc   Data        6702  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_glyph_offsets_0 0x002161ea   Data         190  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_char_ranges   0x002162a8   Data          12  gfx_mk.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa_listentry     0x002162e4   Data           8  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_dictionary_data           0x002162ec   Data         159  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_dictionary_offsets        0x0021638c   Data         124  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_glyph_data_0              0x00216408   Data         822  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_glyph_offsets_0           0x0021673e   Data         190  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_char_ranges               0x002167fc   Data          12  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_Double_listentry          0x00216880   Data           8  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_Narrow_listentry          0x00216888   Data           8  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_listentry                 0x00216890   Data           8  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_dictionary_data     0x00216898   Data         352  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_dictionary_offsets  0x002169f8   Data         276  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_0        0x00216b0c   Data        1460  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_0     0x002170c0   Data         190  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_1        0x0021717e   Data        1341  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_1     0x002176bc   Data         192  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_2        0x0021777c   Data          17  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_2     0x0021778e   Data           2  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_3        0x00217790   Data          16  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_3     0x002177a0   Data           2  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_4        0x002177a2   Data        1096  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_4     0x00217bea   Data         162  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_5        0x00217c8c   Data         159  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_5     0x00217d2c   Data          80  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_data_6        0x00217d7c   Data          50  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_glyph_offsets_6     0x00217dae   Data          26  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_char_ranges         0x00217dc8   Data          84  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY_listentry           0x00217e4c   Data           8  gfx_mk.o(.constdata)
-    basegwinVMT                              0x00217e54   Data          20  gfx_mk.o(.constdata)
-    GNullWindowManagerVMT                    0x00217ea0   Data          36  gfx_mk.o(.constdata)
-    consoleVMT                               0x00217ec8   Data          20  gfx_mk.o(.constdata)
-    buttonVMT                                0x00217edc   Data          40  gfx_mk.o(.constdata)
-    checkboxVMT                              0x00217f04   Data          40  gfx_mk.o(.constdata)
-    imageVMT                                 0x00217f2c   Data          20  gfx_mk.o(.constdata)
-    labelVMT                                 0x00217f40   Data          40  gfx_mk.o(.constdata)
-    radioVMT                                 0x00217f68   Data          40  gfx_mk.o(.constdata)
-    containerVMT                             0x00217f90   Data          64  gfx_mk.o(.constdata)
-    keyboardVMT                              0x00217fd0   Data          40  gfx_mk.o(.constdata)
-    Eng1SKeys                                0x00217ff8   Data         108  gfx_mk.o(.constdata)
-    Eng1Set0Row3                             0x00218064   Data           7  gfx_mk.o(.constdata)
-    Eng1Set1Row0                             0x0021806b   Data          11  gfx_mk.o(.constdata)
-    Eng1Set1Row1                             0x00218076   Data          10  gfx_mk.o(.constdata)
-    Eng1Sets                                 0x00218080   Data          24  gfx_mk.o(.constdata)
-    texteditVMT                              0x002180a0   Data          40  gfx_mk.o(.constdata)
-    FsMemVMT                                 0x00218104   Data          60  gfx_mk.o(.constdata)
-    .constdata                               0x00218140   Section       60  gmouse_lld_ft5336.o(.constdata)
-    .constdata                               0x0021817c   Section    733840  gui.o(.constdata)
-    access_control                           0x002181b4   Data       261258  gui.o(.constdata)
-    dooropenbg                               0x00257e3e   Data       472526  gui.o(.constdata)
-    .constdata                               0x002cb40c   Section       24  system_stm32f7xx.o(.constdata)
-    .constdata                               0x002cb424   Section       20  sdram_diskio.o(.constdata)
-    .constdata                               0x002cb438   Section       48  cos_i.o(.constdata)
-    C                                        0x002cb438   Data          48  cos_i.o(.constdata)
-    .constdata                               0x002cb468   Section      200  rred.o(.constdata)
-    pio2s                                    0x002cb468   Data          48  rred.o(.constdata)
-    twooverpi                                0x002cb498   Data         152  rred.o(.constdata)
-    .constdata                               0x002cb530   Section       40  sin_i.o(.constdata)
-    S                                        0x002cb530   Data          40  sin_i.o(.constdata)
-    .conststring                             0x002cb558   Section      369  gfx_mk.o(.conststring)
+    i.scaled_pixel_callback                  0x00213eac   Section        0  gfx_mk.o(i.scaled_pixel_callback)
+    scaled_pixel_callback                    0x00213ead   Thumb Code    90  gfx_mk.o(i.scaled_pixel_callback)
+    i.set_backlight                          0x00213f08   Section        0  gdisp_lld_stm32ltdc.o(i.set_backlight)
+    set_backlight                            0x00213f09   Thumb Code    32  gdisp_lld_stm32ltdc.o(i.set_backlight)
+    i.skip_pixels                            0x00213f2c   Section        0  gfx_mk.o(i.skip_pixels)
+    skip_pixels                              0x00213f2d   Thumb Code    46  gfx_mk.o(i.skip_pixels)
+    i.strip_spaces                           0x00213f5a   Section        0  gfx_mk.o(i.strip_spaces)
+    strip_spaces                             0x00213f5b   Thumb Code    92  gfx_mk.o(i.strip_spaces)
+    i.vline_clip                             0x00213fb6   Section        0  gfx_mk.o(i.vline_clip)
+    vline_clip                               0x00213fb7   Thumb Code   150  gfx_mk.o(i.vline_clip)
+    i.write_bin_codeword                     0x0021404c   Section        0  gfx_mk.o(i.write_bin_codeword)
+    write_bin_codeword                       0x0021404d   Thumb Code    92  gfx_mk.o(i.write_bin_codeword)
+    i.write_glyph_codeword                   0x002140a8   Section        0  gfx_mk.o(i.write_glyph_codeword)
+    write_glyph_codeword                     0x002140a9   Thumb Code    56  gfx_mk.o(i.write_glyph_codeword)
+    i.write_pixels                           0x002140e0   Section        0  gfx_mk.o(i.write_pixels)
+    write_pixels                             0x002140e1   Thumb Code   104  gfx_mk.o(i.write_pixels)
+    i.write_ref_codeword                     0x00214148   Section        0  gfx_mk.o(i.write_ref_codeword)
+    write_ref_codeword                       0x00214149   Thumb Code    80  gfx_mk.o(i.write_ref_codeword)
+    i.write_ref_dictentry                    0x00214198   Section        0  gfx_mk.o(i.write_ref_dictentry)
+    write_ref_dictentry                      0x00214199   Thumb Code    64  gfx_mk.o(i.write_ref_dictentry)
+    i.write_reg                              0x002141d8   Section        0  gmouse_lld_ft5336.o(i.write_reg)
+    write_reg                                0x002141d9   Thumb Code    22  gmouse_lld_ft5336.o(i.write_reg)
+    i.write_rle_dictentry                    0x002141f4   Section        0  gfx_mk.o(i.write_rle_dictentry)
+    write_rle_dictentry                      0x002141f5   Thumb Code   164  gfx_mk.o(i.write_rle_dictentry)
+    .constdata                               0x00214298   Section      208  gdisp_lld_stm32ltdc.o(.constdata)
+    driverCfg                                0x002142f8   Data         104  gdisp_lld_stm32ltdc.o(.constdata)
+    fmt2Bpp                                  0x00214360   Data           8  gdisp_lld_stm32ltdc.o(.constdata)
+    .constdata                               0x00214368   Section    15840  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_dictionary_data 0x00214368   Data         740  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_dictionary_offsets 0x0021464c   Data         376  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_glyph_data_0  0x002147c4   Data        6702  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_glyph_offsets_0 0x002161f2   Data         190  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_char_ranges   0x002162b0   Data          12  gfx_mk.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa_listentry     0x002162ec   Data           8  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_dictionary_data           0x002162f4   Data         159  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_dictionary_offsets        0x00216394   Data         124  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_glyph_data_0              0x00216410   Data         822  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_glyph_offsets_0           0x00216746   Data         190  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_char_ranges               0x00216804   Data          12  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_Double_listentry          0x00216888   Data           8  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_Narrow_listentry          0x00216890   Data           8  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_listentry                 0x00216898   Data           8  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_dictionary_data     0x002168a0   Data         352  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_dictionary_offsets  0x00216a00   Data         276  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_0        0x00216b14   Data        1460  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_0     0x002170c8   Data         190  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_1        0x00217186   Data        1341  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_1     0x002176c4   Data         192  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_2        0x00217784   Data          17  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_2     0x00217796   Data           2  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_3        0x00217798   Data          16  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_3     0x002177a8   Data           2  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_4        0x002177aa   Data        1096  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_4     0x00217bf2   Data         162  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_5        0x00217c94   Data         159  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_5     0x00217d34   Data          80  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_data_6        0x00217d84   Data          50  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_glyph_offsets_6     0x00217db6   Data          26  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_char_ranges         0x00217dd0   Data          84  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY_listentry           0x00217e54   Data           8  gfx_mk.o(.constdata)
+    basegwinVMT                              0x00217e5c   Data          20  gfx_mk.o(.constdata)
+    GNullWindowManagerVMT                    0x00217ea8   Data          36  gfx_mk.o(.constdata)
+    consoleVMT                               0x00217ed0   Data          20  gfx_mk.o(.constdata)
+    buttonVMT                                0x00217ee4   Data          40  gfx_mk.o(.constdata)
+    checkboxVMT                              0x00217f0c   Data          40  gfx_mk.o(.constdata)
+    imageVMT                                 0x00217f34   Data          20  gfx_mk.o(.constdata)
+    labelVMT                                 0x00217f48   Data          40  gfx_mk.o(.constdata)
+    radioVMT                                 0x00217f70   Data          40  gfx_mk.o(.constdata)
+    containerVMT                             0x00217f98   Data          64  gfx_mk.o(.constdata)
+    keyboardVMT                              0x00217fd8   Data          40  gfx_mk.o(.constdata)
+    Eng1SKeys                                0x00218000   Data         108  gfx_mk.o(.constdata)
+    Eng1Set0Row3                             0x0021806c   Data           7  gfx_mk.o(.constdata)
+    Eng1Set1Row0                             0x00218073   Data          11  gfx_mk.o(.constdata)
+    Eng1Set1Row1                             0x0021807e   Data          10  gfx_mk.o(.constdata)
+    Eng1Sets                                 0x00218088   Data          24  gfx_mk.o(.constdata)
+    texteditVMT                              0x002180a8   Data          40  gfx_mk.o(.constdata)
+    FsMemVMT                                 0x0021810c   Data          60  gfx_mk.o(.constdata)
+    .constdata                               0x00218148   Section       60  gmouse_lld_ft5336.o(.constdata)
+    .constdata                               0x00218184   Section    733840  gui.o(.constdata)
+    access_control                           0x002181bc   Data       261258  gui.o(.constdata)
+    dooropenbg                               0x00257e46   Data       472526  gui.o(.constdata)
+    .constdata                               0x002cb414   Section       24  system_stm32f7xx.o(.constdata)
+    .constdata                               0x002cb42c   Section       20  sdram_diskio.o(.constdata)
+    .constdata                               0x002cb440   Section       48  cos_i.o(.constdata)
+    C                                        0x002cb440   Data          48  cos_i.o(.constdata)
+    .constdata                               0x002cb470   Section      200  rred.o(.constdata)
+    pio2s                                    0x002cb470   Data          48  rred.o(.constdata)
+    twooverpi                                0x002cb4a0   Data         152  rred.o(.constdata)
+    .constdata                               0x002cb538   Section       40  sin_i.o(.constdata)
+    S                                        0x002cb538   Data          40  sin_i.o(.constdata)
+    .conststring                             0x002cb560   Section      369  gfx_mk.o(.conststring)
     .data                                    0x20000000   Section        5  fatfs.o(.data)
     .data                                    0x20000008   Section        8  stm32f7xx_hal_msp.o(.data)
     FMC_Initialized                          0x20000008   Data           4  stm32f7xx_hal_msp.o(.data)
@@ -5266,26 +5267,26 @@ Image Symbol Table
     mf_rlefont_render_character              0x0021399b   Thumb Code   112  gfx_mk.o(i.mf_rlefont_render_character)
     mf_scaled_character_width                0x00213a87   Thumb Code    32  gfx_mk.o(i.mf_scaled_character_width)
     mf_scaled_render_character               0x00213aa9   Thumb Code    90  gfx_mk.o(i.mf_scaled_render_character)
-    rundisplay                               0x00213c89   Thumb Code   388  gui.o(i.rundisplay)
-    GDISPVMT_OnlyOne                         0x00214290   Data          96  gdisp_lld_stm32ltdc.o(.constdata)
-    mf_rlefont_DejaVuSans32_aa               0x002162b4   Data          48  gfx_mk.o(.constdata)
-    mf_rlefont_UI2                           0x00216808   Data          48  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_Narrow                    0x00216838   Data          36  gfx_mk.o(.constdata)
-    mf_rlefont_UI2_Double                    0x0021685c   Data          36  gfx_mk.o(.constdata)
-    mf_rlefont_php6ySCWY                     0x00217e1c   Data          48  gfx_mk.o(.constdata)
-    WhiteWidgetStyle                         0x00217e68   Data          28  gfx_mk.o(.constdata)
-    BlackWidgetStyle                         0x00217e84   Data          28  gfx_mk.o(.constdata)
-    GNullWindowManager                       0x00217ec4   Data           4  gfx_mk.o(.constdata)
-    VirtualKeyboard_English1                 0x00218098   Data           8  gfx_mk.o(.constdata)
-    FsROMVMT                                 0x002180c8   Data          60  gfx_mk.o(.constdata)
-    GMOUSEVMT_OnlyOne                        0x00218140   Data          60  gmouse_lld_ft5336.o(.constdata)
-    white                                    0x0021817c   Data          28  gui.o(.constdata)
-    black                                    0x00218198   Data          28  gui.o(.constdata)
-    AHBPrescTable                            0x002cb40c   Data          16  system_stm32f7xx.o(.constdata)
-    APBPrescTable                            0x002cb41c   Data           8  system_stm32f7xx.o(.constdata)
-    SDRAMDISK_Driver                         0x002cb424   Data          20  sdram_diskio.o(.constdata)
-    Region$$Table$$Base                      0x002cb6cc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x002cb6ec   Number         0  anon$$obj.o(Region$$Table)
+    rundisplay                               0x00213c89   Thumb Code   394  gui.o(i.rundisplay)
+    GDISPVMT_OnlyOne                         0x00214298   Data          96  gdisp_lld_stm32ltdc.o(.constdata)
+    mf_rlefont_DejaVuSans32_aa               0x002162bc   Data          48  gfx_mk.o(.constdata)
+    mf_rlefont_UI2                           0x00216810   Data          48  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_Narrow                    0x00216840   Data          36  gfx_mk.o(.constdata)
+    mf_rlefont_UI2_Double                    0x00216864   Data          36  gfx_mk.o(.constdata)
+    mf_rlefont_php6ySCWY                     0x00217e24   Data          48  gfx_mk.o(.constdata)
+    WhiteWidgetStyle                         0x00217e70   Data          28  gfx_mk.o(.constdata)
+    BlackWidgetStyle                         0x00217e8c   Data          28  gfx_mk.o(.constdata)
+    GNullWindowManager                       0x00217ecc   Data           4  gfx_mk.o(.constdata)
+    VirtualKeyboard_English1                 0x002180a0   Data           8  gfx_mk.o(.constdata)
+    FsROMVMT                                 0x002180d0   Data          60  gfx_mk.o(.constdata)
+    GMOUSEVMT_OnlyOne                        0x00218148   Data          60  gmouse_lld_ft5336.o(.constdata)
+    white                                    0x00218184   Data          28  gui.o(.constdata)
+    black                                    0x002181a0   Data          28  gui.o(.constdata)
+    AHBPrescTable                            0x002cb414   Data          16  system_stm32f7xx.o(.constdata)
+    APBPrescTable                            0x002cb424   Data           8  system_stm32f7xx.o(.constdata)
+    SDRAMDISK_Driver                         0x002cb42c   Data          20  sdram_diskio.o(.constdata)
+    Region$$Table$$Base                      0x002cb6d4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x002cb6f4   Number         0  anon$$obj.o(Region$$Table)
     retSDRAMDISK                             0x20000000   Data           1  fatfs.o(.data)
     SDRAMDISK_Path                           0x20000001   Data           4  fatfs.o(.data)
     _gfxCurrentThread                        0x20000024   Data           4  gfx_mk.o(.data)
@@ -5343,9 +5344,9 @@ Memory Map of the image
 
   Image Entry point : 0x002001c9
 
-  Load Region LR_IROM1 (Base: 0x00200000, Size: 0x000cb860, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x000cb758])
+  Load Region LR_IROM1 (Base: 0x00200000, Size: 0x000cb868, Max: 0x00100000, ABSOLUTE, COMPRESSED[0x000cb760])
 
-    Execution Region ER_IROM1 (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x000cb6ec, Max: 0x00100000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x00200000, Load base: 0x00200000, Size: 0x000cb6f4, Max: 0x00100000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -5898,35 +5899,35 @@ Memory Map of the image
     0x00213b9c   0x00213b9c   0x0000008a   Code   RO         1310    i.render_right      gfx_mk.o
     0x00213c26   0x00213c26   0x00000060   Code   RO         1311    i.resizeText        gfx_mk.o
     0x00213c86   0x00213c86   0x00000002   PAD
-    0x00213c88   0x00213c88   0x0000021c   Code   RO         4403    i.rundisplay        gui.o
-    0x00213ea4   0x00213ea4   0x0000005a   Code   RO         1312    i.scaled_pixel_callback  gfx_mk.o
-    0x00213efe   0x00213efe   0x00000002   PAD
-    0x00213f00   0x00213f00   0x00000024   Code   RO          622    i.set_backlight     gdisp_lld_stm32ltdc.o
-    0x00213f24   0x00213f24   0x0000002e   Code   RO         1313    i.skip_pixels       gfx_mk.o
-    0x00213f52   0x00213f52   0x0000005c   Code   RO         1315    i.strip_spaces      gfx_mk.o
-    0x00213fae   0x00213fae   0x00000096   Code   RO         1317    i.vline_clip        gfx_mk.o
-    0x00214044   0x00214044   0x0000005c   Code   RO         1318    i.write_bin_codeword  gfx_mk.o
-    0x002140a0   0x002140a0   0x00000038   Code   RO         1319    i.write_glyph_codeword  gfx_mk.o
-    0x002140d8   0x002140d8   0x00000068   Code   RO         1320    i.write_pixels      gfx_mk.o
-    0x00214140   0x00214140   0x00000050   Code   RO         1321    i.write_ref_codeword  gfx_mk.o
-    0x00214190   0x00214190   0x00000040   Code   RO         1322    i.write_ref_dictentry  gfx_mk.o
-    0x002141d0   0x002141d0   0x0000001c   Code   RO         4218    i.write_reg         gmouse_lld_ft5336.o
-    0x002141ec   0x002141ec   0x000000a4   Code   RO         1323    i.write_rle_dictentry  gfx_mk.o
-    0x00214290   0x00214290   0x000000d0   Data   RO          623    .constdata          gdisp_lld_stm32ltdc.o
-    0x00214360   0x00214360   0x00003de0   Data   RO         1325    .constdata          gfx_mk.o
-    0x00218140   0x00218140   0x0000003c   Data   RO         4219    .constdata          gmouse_lld_ft5336.o
-    0x0021817c   0x0021817c   0x000b3290   Data   RO         4405    .constdata          gui.o
-    0x002cb40c   0x002cb40c   0x00000018   Data   RO         9785    .constdata          system_stm32f7xx.o
-    0x002cb424   0x002cb424   0x00000014   Data   RO        10245    .constdata          sdram_diskio.o
-    0x002cb438   0x002cb438   0x00000030   Data   RO        10421    .constdata          m_wm.l(cos_i.o)
-    0x002cb468   0x002cb468   0x000000c8   Data   RO        10439    .constdata          m_wm.l(rred.o)
-    0x002cb530   0x002cb530   0x00000028   Data   RO        10443    .constdata          m_wm.l(sin_i.o)
-    0x002cb558   0x002cb558   0x00000171   Data   RO         1326    .conststring        gfx_mk.o
-    0x002cb6c9   0x002cb6c9   0x00000003   PAD
-    0x002cb6cc   0x002cb6cc   0x00000020   Data   RO        10502    Region$$Table       anon$$obj.o
+    0x00213c88   0x00213c88   0x00000224   Code   RO         4403    i.rundisplay        gui.o
+    0x00213eac   0x00213eac   0x0000005a   Code   RO         1312    i.scaled_pixel_callback  gfx_mk.o
+    0x00213f06   0x00213f06   0x00000002   PAD
+    0x00213f08   0x00213f08   0x00000024   Code   RO          622    i.set_backlight     gdisp_lld_stm32ltdc.o
+    0x00213f2c   0x00213f2c   0x0000002e   Code   RO         1313    i.skip_pixels       gfx_mk.o
+    0x00213f5a   0x00213f5a   0x0000005c   Code   RO         1315    i.strip_spaces      gfx_mk.o
+    0x00213fb6   0x00213fb6   0x00000096   Code   RO         1317    i.vline_clip        gfx_mk.o
+    0x0021404c   0x0021404c   0x0000005c   Code   RO         1318    i.write_bin_codeword  gfx_mk.o
+    0x002140a8   0x002140a8   0x00000038   Code   RO         1319    i.write_glyph_codeword  gfx_mk.o
+    0x002140e0   0x002140e0   0x00000068   Code   RO         1320    i.write_pixels      gfx_mk.o
+    0x00214148   0x00214148   0x00000050   Code   RO         1321    i.write_ref_codeword  gfx_mk.o
+    0x00214198   0x00214198   0x00000040   Code   RO         1322    i.write_ref_dictentry  gfx_mk.o
+    0x002141d8   0x002141d8   0x0000001c   Code   RO         4218    i.write_reg         gmouse_lld_ft5336.o
+    0x002141f4   0x002141f4   0x000000a4   Code   RO         1323    i.write_rle_dictentry  gfx_mk.o
+    0x00214298   0x00214298   0x000000d0   Data   RO          623    .constdata          gdisp_lld_stm32ltdc.o
+    0x00214368   0x00214368   0x00003de0   Data   RO         1325    .constdata          gfx_mk.o
+    0x00218148   0x00218148   0x0000003c   Data   RO         4219    .constdata          gmouse_lld_ft5336.o
+    0x00218184   0x00218184   0x000b3290   Data   RO         4405    .constdata          gui.o
+    0x002cb414   0x002cb414   0x00000018   Data   RO         9785    .constdata          system_stm32f7xx.o
+    0x002cb42c   0x002cb42c   0x00000014   Data   RO        10245    .constdata          sdram_diskio.o
+    0x002cb440   0x002cb440   0x00000030   Data   RO        10421    .constdata          m_wm.l(cos_i.o)
+    0x002cb470   0x002cb470   0x000000c8   Data   RO        10439    .constdata          m_wm.l(rred.o)
+    0x002cb538   0x002cb538   0x00000028   Data   RO        10443    .constdata          m_wm.l(sin_i.o)
+    0x002cb560   0x002cb560   0x00000171   Data   RO         1326    .conststring        gfx_mk.o
+    0x002cb6d1   0x002cb6d1   0x00000003   PAD
+    0x002cb6d4   0x002cb6d4   0x00000020   Data   RO        10502    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x002cb6ec, Size: 0x00005230, Max: 0x00050000, ABSOLUTE, COMPRESSED[0x0000006c])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x002cb6f4, Size: 0x00005230, Max: 0x00050000, ABSOLUTE, COMPRESSED[0x0000006c])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -5961,8 +5962,8 @@ Image component sizes
       2204        160        208          0          0      34553   gdisp_lld_stm32ltdc.o
      43436        922      16209        268       6720     271002   gfx_mk.o
        352         32         60          0          0      16088   gmouse_lld_ft5336.o
-      1320        274     733840         72         80       5126   gui.o
-      4356        558          0          0       1468      47094   main.o
+      1328        276     733840         72         80       5122   gui.o
+      4356        556          0          0       1468      47098   main.o
        218         14         20          1          0       4686   sdram_diskio.o
         36          8        456          0      12288        828   startup_stm32f746xx.o
       5434        100          0          0         96      46352   stm32f746g_discovery_sdram.o
@@ -5995,7 +5996,7 @@ Image component sizes
        100         18         24          4          0       1227   system_stm32f7xx.o
 
     ----------------------------------------------------------------------
-     77738       2914     750852        368      20668    1503969   Object Totals
+     77746       2914     750852        368      20668    1503969   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         82          0          3          6          4          0   (incl. Padding)
 
@@ -6064,15 +6065,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     82120       3232     751140        372      20668    1459009   Grand Totals
-     82120       3232     751140        108      20668    1459009   ELF Image Totals (compressed)
-     82120       3232     751140        108          0          0   ROM Totals
+     82128       3232     751140        372      20668    1459009   Grand Totals
+     82128       3232     751140        108      20668    1459009   ELF Image Totals (compressed)
+     82128       3232     751140        108          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)               833260 ( 813.73kB)
+    Total RO  Size (Code + RO Data)               833268 ( 813.74kB)
     Total RW  Size (RW Data + ZI Data)             21040 (  20.55kB)
-    Total ROM Size (Code + RO Data + RW Data)     833368 ( 813.84kB)
+    Total ROM Size (Code + RO Data + RW Data)     833376 ( 813.84kB)
 
 ==============================================================================
 
