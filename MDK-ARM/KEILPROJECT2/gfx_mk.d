@@ -238,6 +238,8 @@ keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_printg.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_scang.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_stdio.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fatfs_wrapper.c
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ff.c
+keilproject2\gfx_mk.o: ..\ugfx\src\gfile/../../3rdparty/fatfs-0.13/source/ffunicode.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_fatfs_diskio_chibios.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_petitfs_wrapper.c
 keilproject2\gfx_mk.o: ..\ugfx\src\gfile/gfile_petitfs_diskio_chibios.c

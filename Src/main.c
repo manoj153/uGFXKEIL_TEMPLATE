@@ -227,10 +227,11 @@ int main(void)
 	 res = f_mount(&SDFatFS, "", 1);
 	 res = f_open(&myFile, "manoj.txt", FA_OPEN_ALWAYS|FA_WRITE|FA_WRITE);
 	 res = f_lseek(&myFile, f_size(&myFile));
-	 f_printf(&myFile, "%s", bufferwr);
+	 //f_printf(&myFile, "%s", bufferwr);
 	 f_close(&myFile);
 	 //<<<<SD CARD file writing demo>>>E>>
-	 
+	 rundisplay();
+	 ugfxfatfsdemo();
   /* USER CODE END 2 */
 
   /* Infinite loop */
