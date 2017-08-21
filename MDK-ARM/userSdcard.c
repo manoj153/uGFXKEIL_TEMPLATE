@@ -57,7 +57,7 @@ int ugfxfatfsdemo(void) {
 	gfileRename("file.txt", "renamedFile.txt");
 	
 	/* Unmount the file system again */
-	gfileUnmount('F', "/");
+	//gfileUnmount('F', "/");
 	
 	/* This line should not work as the file system is now unmounted */
 	LogInfo("[Info]: Entering enldess while loop.");

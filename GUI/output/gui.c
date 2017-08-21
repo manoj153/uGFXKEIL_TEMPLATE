@@ -20,6 +20,7 @@ GHandle ghContainerPage0;
 GHandle ghContainerPage1;
 GHandle createDoorOpenBG;
 GHandle default_pg; // image 
+static gdispImage myImage;
 GHandle touch_button_df_pg; // middle top button on main page
 GHandle ghButton1;
 char buffer1[4];
@@ -41,35 +42,47 @@ font_t dejavu_sans_24;
 // Images
 static void createDoorOpen()
 {
-	GWidgetInit wi;
-	gwinWidgetClearInit(&wi);
+//	GWidgetInit wi;
+//	gwinWidgetClearInit(&wi);
+//	
+//	// create container widget: createDoorOpenBG
+//	wi.g.show = TRUE;
+//	wi.g.x = 0;
+//	wi.g.y = 0;
+//	wi.g.width = 480;
+//	wi.g.height = 272;
+//	wi.g.parent = 0;
+//	wi.text = "Container";
+//	wi.customDraw = 0;
+//	wi.customParam = 0;
+//	wi.customStyle = 0;
+//	createDoorOpenBG = gwinContainerCreate(0, &wi, 0);
+//	
+//	//Create the image object 
+//	
+//	// create button widget: default_pg
+//	wi.g.show = TRUE;
+//	wi.g.x = 0;
+//	wi.g.y = 0;
+//	wi.g.width = 480;
+//	wi.g.height = 272;
+//	wi.g.parent = ghContainerPage0;
+//	default_pg = gwinImageCreate(0, &wi.g)z;
 	
-	// create container widget: createDoorOpenBG
-	wi.g.show = TRUE;
-	wi.g.x = 0;
-	wi.g.y = 0;
-	wi.g.width = 480;
-	wi.g.height = 272;
-	wi.g.parent = 0;
-	wi.text = "Container";
-	wi.customDraw = 0;
-	wi.customParam = 0;
-	wi.customStyle = 0;
-	createDoorOpenBG = gwinContainerCreate(0, &wi, 0);
+
+
+		gdispImageOpenFile(&myImage, "spices1.BMP");
+		gdispImageDraw(&myImage, 0, 0, 480, 272, 0, 0);
+		gdispImageClose(&myImage);
+		gfxSleepMilliseconds(1000);                                                                                                                                                                                                                                   
+		gdispImageOpenFile(&myImage, "spices.BMP");
+		gdispImageDraw(&myImage, 0, 0, 480, 272, 0, 0);
+		gdispImageClose(&myImage);
+		//gwinImageCache(&myImage);
+	//	gdispImageClose(&myImage);
+	//gwinImageOpenMemory(default_pg , dooropenbg);
 	
-	//Create the image object 
-	
-	// create button widget: default_pg
-	wi.g.show = TRUE;
-	wi.g.x = 0;
-	wi.g.y = 0;
-	wi.g.width = 480;
-	wi.g.height = 272;
-	wi.g.parent = ghContainerPage0;
-	default_pg = gwinImageCreate(0, &wi.g);
-	//gwinImageOpenFile(default_pg, "rsc/ACCESS_CONTROL.BMP");
-	gwinImageOpenMemory(default_pg , dooropenbg);
-	//gwinImageOpenMemory(default_pg, access_control);
+//gwinImageOpenMemory(default_pg, access_control);
 }
 static void createPagePage0(void)
 {
@@ -353,6 +366,10 @@ void rundisplay()
 	GEventKeyboard *	pk;
 	unsigned			i = 0;
 	gfxInit();
+	while(1)
+	{
+		createDoorOpen();
+	}
 		dejavu_sans_16 = gdispOpenFont("DejaVuSans16");
 	gwinSetDefaultFont(dejavu_sans_16);
 	gwinSetDefaultStyle(&WhiteWidgetStyle, FALSE);
@@ -460,13 +477,16 @@ void rundisplay()
 						gwinHide(ghContainerPage1);
 						gwinDestroy(ghKeyboard);
 						gwinDestroy(ghConsole);
+						
 						createDoorOpen();
-						gwinShow(createDoorOpenBG);
-						gfxSleepMilliseconds(100);
+						//gwinShow(createDoorOpenBG);
+						//gfxSleepMilliseconds(10000);
 					}
 					else
+					{
 						gwinPrintf(ghConsole, "password wrong");
-						//Print Door Closed Images
+						//Print Door Closed Images			
+					}
 					i=0;
 			}
 			}

@@ -231,7 +231,7 @@ int main(void)
 	 f_close(&myFile);
 	 //<<<<SD CARD file writing demo>>>E>>
 	 rundisplay();
-	 ugfxfatfsdemo();
+	 //ugfxfatfsdemo();
   /* USER CODE END 2 */
 
   /* Infinite loop */
