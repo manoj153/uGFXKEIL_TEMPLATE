@@ -1,0 +1,56 @@
+
+<System State Posssibilities>
+	<*>CardReader.
+	<*>Keypad.
+	<*>CardReader + Keypad.
+	<*>ScreenSaver.
+	<*>DoorOpen Image
+	<*>DoorClose Image
+</System State Posssibilities>
+
+
+<AccessOperations>
+
+<Card>
+<*>Workings.
+	<->{"Access":"Allowed"}[CRead]->[Send]->[LED{A}]/[DoorOpenI]
+	<-->{"Access":"!Allowed"}[CRead]->[Send]->[LED{C}]/[DoorClosedI]
+</CardReader>
+
+<KeyPad>
+<*>Workings
+	<->{"Access":"Allowed"}[PinE]->[Send]->[LED{A}]/[DoorOpenI]
+	<-->{"Access":"!Allowed"[PinE]->[Send]->[LED{C}]/[DoorClosedI]
+	<*>ConfigMenu
+		<->SpecialPassword == "TRUE" :? ConfigMenu, Continue.
+</KeyPad>
+
+<Card+KeyPad>
+<*>Workings
+	<->{"Access":"Allowed"}[CRead]->[Send]->[PinE]->[Send]->[LED{A}]/[DoorOpenI]
+	<-->{"Access":"!Allowed"}[CRead]->[Send]->[PinE]->[Send]->[LED{C}]/[DoorClosedI]
+
+<*>SpecialCase In this Access Operation Mode
+	<*>SuperUser
+		<->{"Access":"Allowed"}[CRead]->[Send]->[LED{A}]/[DoorOpenI]
+		<-->{"Access":"Allowed"}[PinE]->[Send]->[LED{A}]/[DoorOpenI]S
+</Card+KeyPad>
+	
+<Default>
+<*> Touch will show Up keypad pins.
+</Default>
+
+
+
+</AccessOperation>	
+
+
+{A} 	= 	Active
+{C} 	= 	CutOff
+I 		= 	Image
+
+
+[CRead] = Read the Card access BITS encoded in
+LED{A}]	= A Signal Denoting door is Opened and we assume as Access Granted.
+LED{C}]	= A signal Denoting door is Closed/Unchanged and we assume Access not Granted.
+[Send]	= Relay(Tx) the data using D0/D1 bit tranfer protocol.
