@@ -54,3 +54,8 @@ I 		= 	Image
 LED{A}]	= A Signal Denoting door is Opened and we assume as Access Granted.
 LED{C}]	= A signal Denoting door is Closed/Unchanged and we assume Access not Granted.
 [Send]	= Relay(Tx) the data using D0/D1 bit tranfer protocol.
+
+<ProjectTracking>
+	<*>www.pivotaltracker.com
+		<->Sign-in to view the project.
+</ProjectTracking>
