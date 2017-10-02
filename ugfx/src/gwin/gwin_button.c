@@ -216,13 +216,13 @@ static const GColorSet *getButtonColors(GWidgetObject *gw) {
 		if (gw->g.vmt != (gwinVMT *)&buttonVMT)	return;
 		pcol = getButtonColors(gw);
 
-		gdispGFillArea(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, gw->pstyle->background);
+		//gdispGFillArea(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, gw->pstyle->background);
 		if (gw->g.width >= 2*BTN_CNR_SIZE+10) {
-			gdispGFillRoundedBox(gw->g.display, gw->g.x+1, gw->g.y+1, gw->g.width-2, gw->g.height-2, BTN_CNR_SIZE-1, pcol->fill);
+			//gdispGFillRoundedBox(gw->g.display, gw->g.x+1, gw->g.y+1, gw->g.width-2, gw->g.height-2, BTN_CNR_SIZE-1, pcol->fill);
 			gdispGDrawStringBox(gw->g.display, gw->g.x+1, gw->g.y+BTN_CNR_SIZE, gw->g.width-2, gw->g.height-(2*BTN_CNR_SIZE), gw->text, gw->g.font, pcol->text, justifyCenter);
 			gdispGDrawRoundedBox(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, BTN_CNR_SIZE, pcol->edge);
 		} else {
-			gdispGFillStringBox(gw->g.display, gw->g.x+1, gw->g.y+1, gw->g.width-2, gw->g.height-2, gw->text, gw->g.font, pcol->text, pcol->fill, justifyCenter);
+			//gdispGFillStringBox(gw->g.display, gw->g.x+1, gw->g.y+1, gw->g.width-2, gw->g.height-2, gw->text, gw->g.font, pcol->text, pcol->fill, justifyCenter);
 			gdispGDrawBox(gw->g.display, gw->g.x, gw->g.y, gw->g.width, gw->g.height, pcol->edge);
 		}
 	}

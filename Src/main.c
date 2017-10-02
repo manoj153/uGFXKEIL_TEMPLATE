@@ -60,7 +60,8 @@ char bufferwr[30] = "Manojkumar\r\n" ;
 char bufferrd[30];
 char SDPath[10];
 uint32_t byteswritten, bytesread;
-
+extern void runonce();
+extern void guiEventLoop(void);
 enum _bool
 {
 false = 0,
@@ -230,6 +231,8 @@ int main(void)
 	 //f_printf(&myFile, "%s", bufferwr);
 	 f_close(&myFile);
 	 //<<<<SD CARD file writing demo>>>E>>
+		//runonce();
+		//guiEventLoop();
 	 rundisplay();
 	 //ugfxfatfsdemo();
   /* USER CODE END 2 */
